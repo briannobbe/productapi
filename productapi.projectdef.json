@@ -1,0 +1,835 @@
+[{
+    "ident": 2302,
+    "ts": "2017-05-26T19:09:41.785",
+    "exportVersion": "v4",
+    "adminSchemaVersion": "20170331",
+    "name": "Product API",
+    "url_name": "productlocation",
+    "comments": "API for getting information about available products",
+    "status": null,
+    "is_active": true,
+    "account_ident": 1000,
+    "authprovider_ident": 1000,
+    "@metadata": {
+        "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport/2302",
+        "checksum": "A:943e8ba750060770",
+        "nonpersistent": [
+            "exportVersion",
+            "adminSchemaVersion"
+        ]
+    },
+    "Topics": [],
+    "Rules": [
+        {
+            "ident": 2210,
+            "ts": "2017-05-26T19:16:23.436",
+            "entity_name": "main:ProductDetail",
+            "attribute_name": "TotalUnitsInStock",
+            "prop1": null,
+            "prop2": null,
+            "prop3": null,
+            "prop4": null,
+            "prop5": null,
+            "rule_text1": "ProductDetail_2_BinDetail_ProductLocation_List",
+            "rule_text2": null,
+            "rule_text3": "UnitsInStock",
+            "rule_text4": null,
+            "rule_text5": null,
+            "predicate": null,
+            "name": "Total Units in Stock per product",
+            "auto_name": "Derive TotalUnitsInStock as sum(ProductDetail_2_BinDetail_ProductLocation_List.UnitsInStock)",
+            "verbs": null,
+            "comments": null,
+            "active": true,
+            "sqlable": true,
+            "jit": true,
+            "project_ident": 2302,
+            "ruletype_ident": 1,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.Rules/2210",
+                "checksum": "A:fdd6caf45b3afd7c"
+            },
+            "RuleTopics": []
+        },
+        {
+            "ident": 2211,
+            "ts": "2017-05-26T19:17:08.031",
+            "entity_name": "main:ProductDetail",
+            "attribute_name": null,
+            "prop1": null,
+            "prop2": null,
+            "prop3": null,
+            "prop4": "javascript",
+            "prop5": null,
+            "rule_text1": "return row.TotalUnitsInStock <= row.MaxUnitsInStock;",
+            "rule_text2": "Product {ProductId} would be in over stock condition, update rolled back, try again",
+            "rule_text3": null,
+            "rule_text4": null,
+            "rule_text5": null,
+            "predicate": null,
+            "name": "Control Overstock",
+            "auto_name": "Validation return row.TotalUnitsInStock <= row.MaxUnitsInStock;",
+            "verbs": null,
+            "comments": null,
+            "active": true,
+            "sqlable": false,
+            "jit": false,
+            "project_ident": 2302,
+            "ruletype_ident": 5,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.Rules/2211",
+                "checksum": "A:fdd6caf45b3afd7c"
+            },
+            "RuleTopics": []
+        }
+    ],
+    "ApiKeys": [{
+        "ident": 2607,
+        "ts": "2017-05-26T19:09:41.824",
+        "name": "Admin key",
+        "description": "Created as part of this API. Feel free to change or delete this auth token.",
+        "apikey": "JeOAeZQL6w2TZQ7mknNV",
+        "status": "A",
+        "expiration": null,
+        "logging": "*=FINE",
+        "user_identifier": null,
+        "data": null,
+        "origin": null,
+        "project_ident": 2302,
+        "@metadata": {
+            "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ApiKeys/2607",
+            "checksum": "A:ec95130b1e77f714"
+        }
+    }],
+    "ApiVersions": [{
+        "ident": 2302,
+        "ts": "2017-05-26T19:09:41.988",
+        "name": "v1",
+        "comments": null,
+        "project_ident": 2302,
+        "@metadata": {
+            "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ApiVersions/2302",
+            "checksum": "A:065ffb6cfab3e4dd"
+        },
+        "Resources": [
+            {
+                "ident": 2225,
+                "ts": "2017-05-26T19:15:10.819",
+                "resource_type_ident": 1,
+                "prefix": "main",
+                "table_name": "ProductDetail",
+                "name": "AvailableProducts",
+                "description": null,
+                "is_collection": "Y",
+                "join_condition": null,
+                "filter": "\"TotalUnitsInStock\" > 0 OR \"AllowBackOrder\"",
+                "sorting": null,
+                "attach_path": null,
+                "caching": null,
+                "custom_class": null,
+                "code_text": null,
+                "filter_code": "",
+                "serial_filter": null,
+                "prop1": null,
+                "prop2": null,
+                "prop3": null,
+                "prop4": null,
+                "prop5": null,
+                "container_ident": null,
+                "sibling_rank": 100,
+                "combined": false,
+                "root_ident": null,
+                "apiversion_ident": 2302,
+                "@metadata": {
+                    "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ApiVersions.Resources/2225",
+                    "checksum": "A:d9cc443fbfb2c33a"
+                },
+                "ResourceAttributes": [
+                    {
+                        "ident": 2246,
+                        "ts": "2017-05-26T19:15:28.705",
+                        "name": "ProductId",
+                        "description": null,
+                        "column_name": "ProductId",
+                        "format": null,
+                        "formula": null,
+                        "is_defined_key_part": false,
+                        "resource_ident": 2225,
+                        "code_type": null,
+                        "@metadata": {
+                            "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ApiVersions.Resources.ResourceAttributes/2246",
+                            "checksum": "A:e2f86b3c8bde1c18"
+                        }
+                    },
+                    {
+                        "ident": 2247,
+                        "ts": "2017-05-26T19:15:29.4",
+                        "name": "ProductSku",
+                        "description": null,
+                        "column_name": "ProductSku",
+                        "format": null,
+                        "formula": null,
+                        "is_defined_key_part": false,
+                        "resource_ident": 2225,
+                        "code_type": null,
+                        "@metadata": {
+                            "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ApiVersions.Resources.ResourceAttributes/2247",
+                            "checksum": "A:e2f86b3c8bde1c18"
+                        }
+                    },
+                    {
+                        "ident": 2248,
+                        "ts": "2017-05-26T19:15:30.211",
+                        "name": "ProductName",
+                        "description": null,
+                        "column_name": "ProductName",
+                        "format": null,
+                        "formula": null,
+                        "is_defined_key_part": false,
+                        "resource_ident": 2225,
+                        "code_type": null,
+                        "@metadata": {
+                            "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ApiVersions.Resources.ResourceAttributes/2248",
+                            "checksum": "A:e2f86b3c8bde1c18"
+                        }
+                    },
+                    {
+                        "ident": 2249,
+                        "ts": "2017-05-26T19:15:30.86",
+                        "name": "UnitPrice",
+                        "description": null,
+                        "column_name": "UnitPrice",
+                        "format": null,
+                        "formula": null,
+                        "is_defined_key_part": false,
+                        "resource_ident": 2225,
+                        "code_type": null,
+                        "@metadata": {
+                            "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ApiVersions.Resources.ResourceAttributes/2249",
+                            "checksum": "A:e2f86b3c8bde1c18"
+                        }
+                    },
+                    {
+                        "ident": 2250,
+                        "ts": "2017-05-26T19:15:32.622",
+                        "name": "AvailableQty",
+                        "description": null,
+                        "column_name": "TotalUnitsInStock",
+                        "format": null,
+                        "formula": null,
+                        "is_defined_key_part": false,
+                        "resource_ident": 2225,
+                        "code_type": null,
+                        "@metadata": {
+                            "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ApiVersions.Resources.ResourceAttributes/2250",
+                            "checksum": "A:e2f86b3c8bde1c18"
+                        }
+                    },
+                    {
+                        "ident": 2251,
+                        "ts": "2017-05-26T19:37:39.563",
+                        "name": "AllowBackOrder",
+                        "description": null,
+                        "column_name": "AllowBackOrder",
+                        "format": null,
+                        "formula": null,
+                        "is_defined_key_part": false,
+                        "resource_ident": 2225,
+                        "code_type": null,
+                        "@metadata": {
+                            "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ApiVersions.Resources.ResourceAttributes/2251",
+                            "checksum": "A:e2f86b3c8bde1c18"
+                        }
+                    }
+                ]
+            },
+            {
+                "ident": 2226,
+                "ts": "2017-05-26T19:38:12.834",
+                "resource_type_ident": 1,
+                "prefix": "main",
+                "table_name": "ProductLocation",
+                "name": "ProductLocations",
+                "description": null,
+                "is_collection": "Y",
+                "join_condition": "\"FK_ProductDetail_ProductId\" = [\"ProductId\"]",
+                "filter": "\"UnitsInStock\">0",
+                "sorting": null,
+                "attach_path": null,
+                "caching": null,
+                "custom_class": null,
+                "code_text": null,
+                "filter_code": "",
+                "serial_filter": null,
+                "prop1": null,
+                "prop2": null,
+                "prop3": null,
+                "prop4": null,
+                "prop5": null,
+                "container_ident": 2225,
+                "sibling_rank": 100,
+                "combined": false,
+                "root_ident": 2225,
+                "apiversion_ident": 2302,
+                "@metadata": {
+                    "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ApiVersions.Resources/2226",
+                    "checksum": "A:d9cc443fbfb2c33a"
+                },
+                "ResourceAttributes": [
+                    {
+                        "ident": 2252,
+                        "ts": "2017-05-26T19:38:30.094",
+                        "name": "UnitsInStock",
+                        "description": null,
+                        "column_name": "UnitsInStock",
+                        "format": null,
+                        "formula": null,
+                        "is_defined_key_part": false,
+                        "resource_ident": 2226,
+                        "code_type": null,
+                        "@metadata": {
+                            "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ApiVersions.Resources.ResourceAttributes/2252",
+                            "checksum": "A:e2f86b3c8bde1c18"
+                        }
+                    },
+                    {
+                        "ident": 2253,
+                        "ts": "2017-05-26T19:38:30.986",
+                        "name": "BarcodeTagData",
+                        "description": null,
+                        "column_name": "BarcodeTagData",
+                        "format": null,
+                        "formula": null,
+                        "is_defined_key_part": false,
+                        "resource_ident": 2226,
+                        "code_type": null,
+                        "@metadata": {
+                            "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ApiVersions.Resources.ResourceAttributes/2253",
+                            "checksum": "A:e2f86b3c8bde1c18"
+                        }
+                    },
+                    {
+                        "ident": 2254,
+                        "ts": "2017-05-26T19:38:31.554",
+                        "name": "BinId",
+                        "description": null,
+                        "column_name": "BinId",
+                        "format": null,
+                        "formula": null,
+                        "is_defined_key_part": false,
+                        "resource_ident": 2226,
+                        "code_type": null,
+                        "@metadata": {
+                            "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ApiVersions.Resources.ResourceAttributes/2254",
+                            "checksum": "A:e2f86b3c8bde1c18"
+                        }
+                    }
+                ]
+            }
+        ]
+    }],
+    "Applications": [{
+        "ident": 2101,
+        "ts": "2017-05-26T19:19:18.447",
+        "name": "Default app",
+        "description": null,
+        "project_ident": 2302,
+        "default_language": "eng",
+        "skin_ident": null,
+        "@metadata": {
+            "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.Applications/2101",
+            "checksum": "A:27fe1c214bb46055"
+        },
+        "ApplicationOptions": [],
+        "ApplicationSkins": [],
+        "ApplicationTableSettings": [{
+            "ident": 2001,
+            "ts": "2017-05-26T19:19:28.543",
+            "table_name": "main:ProductDetail",
+            "object_type": "table",
+            "json": "{\"name\":\"main:ProductDetail\",\"alias\":\"main:ProductDetail\",\"columnFormats\":{\"ProductId\":{\"name\":\"ProductId\",\"alias\":\"Product Id\",\"type\":\"INTEGER\",\"generic_type\":\"number\",\"is_editable\":true,\"is_nullable\":false,\"mask\":null,\"maskType\":\"number\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"ProductId\",\"width\":61.337792337792344,\"$$hashKey\":\"04U\"},\"ProductSku\":{\"name\":\"ProductSku\",\"alias\":\"Product Sku\",\"type\":\"VARCHAR\",\"generic_type\":\"string\",\"is_editable\":true,\"is_nullable\":true,\"mask\":null,\"maskType\":\"string\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"ProductSku\",\"width\":245.35116935116937,\"$$hashKey\":\"04V\"},\"ProductName\":{\"name\":\"ProductName\",\"alias\":\"Product Name\",\"type\":\"VARCHAR\",\"generic_type\":\"string\",\"is_editable\":true,\"is_nullable\":true,\"mask\":null,\"maskType\":\"string\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"ProductName\",\"width\":245.35116935116937,\"$$hashKey\":\"04W\"},\"UnitPrice\":{\"name\":\"UnitPrice\",\"alias\":\"Unit Price\",\"type\":\"DECIMAL\",\"generic_type\":\"number\",\"is_editable\":true,\"is_nullable\":true,\"mask\":\"$0,0.00\",\"maskType\":\"numeric\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"UnitPrice\",\"$$hashKey\":\"04X\",\"width\":67.23996723996724},\"MaxUnitsInStock\":{\"name\":\"MaxUnitsInStock\",\"alias\":\"Max Units In Stock\",\"type\":\"INTEGER\",\"generic_type\":\"number\",\"is_editable\":true,\"is_nullable\":true,\"mask\":null,\"maskType\":\"number\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"MaxUnitsInStock\",\"$$hashKey\":\"04Y\",\"width\":67.23996723996724},\"TotalUnitsInStock\":{\"name\":\"TotalUnitsInStock\",\"alias\":\"Total Units In Stock\",\"type\":\"INTEGER\",\"generic_type\":\"number\",\"is_editable\":false,\"is_nullable\":true,\"mask\":null,\"maskType\":\"number\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"TotalUnitsInStock\",\"$$hashKey\":\"04Z\",\"width\":67.23996723996724},\"AllowBackOrder\":{\"name\":\"AllowBackOrder\",\"alias\":\"Allow Back Order\",\"type\":\"BOOLEAN\",\"generic_type\":\"boolean\",\"is_editable\":true,\"is_nullable\":true,\"mask\":null,\"maskType\":\"boolean\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"AllowBackOrder\",\"$$hashKey\":\"050\",\"width\":67.23996723996724}},\"gridColumns\":{\"ProductId\":{\"name\":\"ProductId\",\"alias\":\"Product Id\",\"type\":\"INTEGER\",\"generic_type\":\"number\",\"is_editable\":true,\"is_nullable\":false,\"mask\":null,\"maskType\":\"number\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"ProductId\",\"width\":61.337792337792344,\"$$hashKey\":\"04U\"},\"ProductSku\":{\"name\":\"ProductSku\",\"alias\":\"Product Sku\",\"type\":\"VARCHAR\",\"generic_type\":\"string\",\"is_editable\":true,\"is_nullable\":true,\"mask\":null,\"maskType\":\"string\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"ProductSku\",\"width\":245.35116935116937,\"$$hashKey\":\"04V\"},\"ProductName\":{\"name\":\"ProductName\",\"alias\":\"Product Name\",\"type\":\"VARCHAR\",\"generic_type\":\"string\",\"is_editable\":true,\"is_nullable\":true,\"mask\":null,\"maskType\":\"string\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"ProductName\",\"width\":245.35116935116937,\"$$hashKey\":\"04W\"},\"UnitPrice\":{\"name\":\"UnitPrice\",\"alias\":\"Unit Price\",\"type\":\"DECIMAL\",\"generic_type\":\"number\",\"is_editable\":true,\"is_nullable\":true,\"mask\":\"$0,0.00\",\"maskType\":\"numeric\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"UnitPrice\",\"$$hashKey\":\"04X\",\"width\":67.23996723996724},\"MaxUnitsInStock\":{\"name\":\"MaxUnitsInStock\",\"alias\":\"Max Units In Stock\",\"type\":\"INTEGER\",\"generic_type\":\"number\",\"is_editable\":true,\"is_nullable\":true,\"mask\":null,\"maskType\":\"number\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"MaxUnitsInStock\",\"$$hashKey\":\"04Y\",\"width\":67.23996723996724},\"TotalUnitsInStock\":{\"name\":\"TotalUnitsInStock\",\"alias\":\"Total Units In Stock\",\"type\":\"INTEGER\",\"generic_type\":\"number\",\"is_editable\":false,\"is_nullable\":true,\"mask\":null,\"maskType\":\"number\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"TotalUnitsInStock\",\"$$hashKey\":\"04Z\",\"width\":67.23996723996724},\"AllowBackOrder\":{\"name\":\"AllowBackOrder\",\"alias\":\"Allow Back Order\",\"type\":\"BOOLEAN\",\"generic_type\":\"boolean\",\"is_editable\":true,\"is_nullable\":true,\"mask\":null,\"maskType\":\"boolean\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"AllowBackOrder\",\"$$hashKey\":\"050\",\"width\":67.23996723996724}},\"scalarColumns\":{\"ProductId\":{\"name\":\"ProductId\",\"alias\":\"Product Id\",\"type\":\"INTEGER\",\"generic_type\":\"number\",\"is_editable\":true,\"is_nullable\":false,\"mask\":null,\"maskType\":\"number\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"ProductId\",\"width\":61.337792337792344,\"$$hashKey\":\"04U\"},\"ProductSku\":{\"name\":\"ProductSku\",\"alias\":\"Product Sku\",\"type\":\"VARCHAR\",\"generic_type\":\"string\",\"is_editable\":true,\"is_nullable\":true,\"mask\":null,\"maskType\":\"string\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"ProductSku\",\"width\":245.35116935116937,\"$$hashKey\":\"04V\"},\"ProductName\":{\"name\":\"ProductName\",\"alias\":\"Product Name\",\"type\":\"VARCHAR\",\"generic_type\":\"string\",\"is_editable\":true,\"is_nullable\":true,\"mask\":null,\"maskType\":\"string\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"ProductName\",\"width\":245.35116935116937,\"$$hashKey\":\"04W\"},\"UnitPrice\":{\"name\":\"UnitPrice\",\"alias\":\"Unit Price\",\"type\":\"DECIMAL\",\"generic_type\":\"number\",\"is_editable\":true,\"is_nullable\":true,\"mask\":\"$0,0.00\",\"maskType\":\"numeric\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"UnitPrice\",\"$$hashKey\":\"04X\",\"width\":67.23996723996724},\"MaxUnitsInStock\":{\"name\":\"MaxUnitsInStock\",\"alias\":\"Max Units In Stock\",\"type\":\"INTEGER\",\"generic_type\":\"number\",\"is_editable\":true,\"is_nullable\":true,\"mask\":null,\"maskType\":\"number\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"MaxUnitsInStock\",\"$$hashKey\":\"04Y\",\"width\":67.23996723996724},\"TotalUnitsInStock\":{\"name\":\"TotalUnitsInStock\",\"alias\":\"Total Units In Stock\",\"type\":\"INTEGER\",\"generic_type\":\"number\",\"is_editable\":false,\"is_nullable\":true,\"mask\":null,\"maskType\":\"number\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"TotalUnitsInStock\",\"$$hashKey\":\"04Z\",\"width\":67.23996723996724},\"AllowBackOrder\":{\"name\":\"AllowBackOrder\",\"alias\":\"Allow Back Order\",\"type\":\"BOOLEAN\",\"generic_type\":\"boolean\",\"is_editable\":true,\"is_nullable\":true,\"mask\":null,\"maskType\":\"boolean\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"AllowBackOrder\",\"$$hashKey\":\"050\",\"width\":67.23996723996724}},\"parentSettings\":{},\"defaultTable\":false,\"windows\":[\"main\",\"child\",\"form\"],\"childrenSettings\":{\"ProductDetail_2_BinDetail_ProductLocation_List\":{\"name\":\"ProductDetail_2_BinDetail_ProductLocation_List\",\"tableName\":\"main:ProductLocation\",\"alias\":\"ProductLocation\",\"displayed\":true,\"selected\":false,\"columnFormats\":{\"BinId\":{\"name\":\"BinId\",\"alias\":\"Bin Id\",\"type\":\"INTEGER\",\"generic_type\":\"number\",\"is_editable\":true,\"is_nullable\":false,\"mask\":null,\"maskType\":\"number\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"BinId\",\"width\":133.5},\"BarcodeTagData\":{\"name\":\"BarcodeTagData\",\"alias\":\"Barcode Tag Data\",\"type\":\"VARCHAR\",\"generic_type\":\"string\",\"is_editable\":true,\"is_nullable\":true,\"mask\":null,\"maskType\":\"string\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"BarcodeTagData\",\"width\":534},\"FK_ProductDetail_ProductId\":{\"name\":\"FK_ProductDetail_ProductId\",\"alias\":\"FK Product Detail Product Id\",\"type\":\"INTEGER\",\"generic_type\":\"number\",\"is_editable\":true,\"is_nullable\":false,\"mask\":null,\"maskType\":\"number\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"FK_ProductDetail_ProductId\"},\"UnitsInStock\":{\"name\":\"UnitsInStock\",\"alias\":\"Units In Stock\",\"type\":\"INTEGER\",\"generic_type\":\"number\",\"is_editable\":true,\"is_nullable\":true,\"mask\":null,\"maskType\":\"number\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"UnitsInStock\",\"width\":133.5}},\"child_table\":\"main:ProductLocation\",\"downloadable\":false,\"gridColumns\":{\"BinId\":{\"name\":\"BinId\",\"alias\":\"Bin Id\",\"type\":\"INTEGER\",\"generic_type\":\"number\",\"is_editable\":true,\"is_nullable\":false,\"mask\":null,\"maskType\":\"number\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"BinId\",\"width\":133.5},\"BarcodeTagData\":{\"name\":\"BarcodeTagData\",\"alias\":\"Barcode Tag Data\",\"type\":\"VARCHAR\",\"generic_type\":\"string\",\"is_editable\":true,\"is_nullable\":true,\"mask\":null,\"maskType\":\"string\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"BarcodeTagData\",\"width\":534},\"UnitsInStock\":{\"name\":\"UnitsInStock\",\"alias\":\"Units In Stock\",\"type\":\"INTEGER\",\"generic_type\":\"number\",\"is_editable\":true,\"is_nullable\":true,\"mask\":null,\"maskType\":\"number\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"UnitsInStock\",\"width\":133.5}},\"parentSettings\":{\"ProductDetail_2_BinDetail_ProductDetail\":{\"alias\":\"main:ProductDetail\",\"child_table\":\"main:ProductLocation\",\"parent_table\":\"main:ProductDetail\",\"columnFormats\":{\"ProductId\":{\"name\":\"ProductId\",\"alias\":\"ProductDetail Product Id\",\"type\":\"INTEGER\",\"generic_type\":\"number\",\"is_editable\":true,\"is_nullable\":false,\"mask\":null,\"maskType\":\"number\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"__internal.parentRows.ProductDetail_2_BinDetail_ProductDetail.ProductId\",\"parentRole\":\"ProductDetail_2_BinDetail_ProductDetail\"},\"ProductSku\":{\"name\":\"ProductSku\",\"alias\":\"ProductDetail Product Sku\",\"type\":\"VARCHAR\",\"generic_type\":\"string\",\"is_editable\":true,\"is_nullable\":true,\"mask\":null,\"maskType\":\"string\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"__internal.parentRows.ProductDetail_2_BinDetail_ProductDetail.ProductSku\",\"parentRole\":\"ProductDetail_2_BinDetail_ProductDetail\"},\"ProductName\":{\"name\":\"ProductName\",\"alias\":\"ProductDetail Product Name\",\"type\":\"VARCHAR\",\"generic_type\":\"string\",\"is_editable\":true,\"is_nullable\":true,\"mask\":null,\"maskType\":\"string\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"__internal.parentRows.ProductDetail_2_BinDetail_ProductDetail.ProductName\",\"parentRole\":\"ProductDetail_2_BinDetail_ProductDetail\"},\"UnitPrice\":{\"name\":\"UnitPrice\",\"alias\":\"ProductDetail Unit Price\",\"type\":\"DECIMAL\",\"generic_type\":\"number\",\"is_editable\":true,\"is_nullable\":true,\"mask\":\"$0,0.00\",\"maskType\":\"numeric\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"__internal.parentRows.ProductDetail_2_BinDetail_ProductDetail.UnitPrice\",\"parentRole\":\"ProductDetail_2_BinDetail_ProductDetail\"},\"MaxUnitsInStock\":{\"name\":\"MaxUnitsInStock\",\"alias\":\"ProductDetail Max Units In Stock\",\"type\":\"INTEGER\",\"generic_type\":\"number\",\"is_editable\":true,\"is_nullable\":true,\"mask\":null,\"maskType\":\"number\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"__internal.parentRows.ProductDetail_2_BinDetail_ProductDetail.MaxUnitsInStock\",\"parentRole\":\"ProductDetail_2_BinDetail_ProductDetail\"},\"TotalUnitsInStock\":{\"name\":\"TotalUnitsInStock\",\"alias\":\"ProductDetail Total Units In Stock\",\"type\":\"INTEGER\",\"generic_type\":\"number\",\"is_editable\":false,\"is_nullable\":true,\"mask\":null,\"maskType\":\"number\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"__internal.parentRows.ProductDetail_2_BinDetail_ProductDetail.TotalUnitsInStock\",\"parentRole\":\"ProductDetail_2_BinDetail_ProductDetail\"},\"AllowBackOrder\":{\"name\":\"AllowBackOrder\",\"alias\":\"ProductDetail Allow Back Order\",\"type\":\"BOOLEAN\",\"generic_type\":\"boolean\",\"is_editable\":true,\"is_nullable\":true,\"mask\":null,\"maskType\":\"boolean\",\"binaryType\":null,\"extensionType\":null,\"eval\":[],\"dataSource\":\"__internal.parentRows.ProductDetail_2_BinDetail_ProductDetail.AllowBackOrder\",\"parentRole\":\"ProductDetail_2_BinDetail_ProductDetail\"}}}},\"groups\":[],\"labelPlacement\":\"left\"}},\"groups\":[],\"labelPlacement\":\"Left\"}",
+            "app_ident": 2101,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.Applications.ApplicationTableSettings/2001",
+                "checksum": "A:eb7b24bd63b2ed00"
+            }
+        }]
+    }],
+    "DbaseSchemas": [{
+        "ident": 2304,
+        "name": "Database: product12",
+        "comments": "Created using API Creation Wizard - Managed Data API",
+        "url": "jdbc:derby:directory:ManagedData;create=true",
+        "catalog_name": null,
+        "schema_name": "product12",
+        "user_name": "product12",
+        "password": null,
+        "salt": null,
+        "active": true,
+        "status": null,
+        "dbasetype_ident": 17,
+        "prefix": "main",
+        "datasource_name": null,
+        "schema_editable": true,
+        "role_strategy": "standard",
+        "@metadata": {
+            "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.DbaseSchemas/2304",
+            "checksum": "A:8dec56164cbfeb0e"
+        },
+        "NonPersistentAttributes": [],
+        "TableInfos": [],
+        "ViewInfos": []
+    }],
+    "EventHandlers": [],
+    "Functions": [],
+    "Handlers": [],
+    "NamedFilters": [],
+    "NamedSorts": [],
+    "ProjectLibraries": [],
+    "ProjectOptions": [
+        {
+            "ident": 2246,
+            "ts": "2017-05-26T19:23:00.808",
+            "option_value": "@metadata",
+            "project_ident": 2302,
+            "projectoptiontype_ident": 4,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2246",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        },
+        {
+            "ident": 2247,
+            "ts": "2017-05-26T19:23:00.808",
+            "option_value": "2000",
+            "project_ident": 2302,
+            "projectoptiontype_ident": 5,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2247",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        },
+        {
+            "ident": 2248,
+            "ts": "2017-05-26T19:23:00.808",
+            "option_value": "urn:caliveapicreator:",
+            "project_ident": 2302,
+            "projectoptiontype_ident": 2,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2248",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        },
+        {
+            "ident": 2249,
+            "ts": "2017-05-26T19:23:00.808",
+            "option_value": "2000",
+            "project_ident": 2302,
+            "projectoptiontype_ident": 6,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2249",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        },
+        {
+            "ident": 2250,
+            "ts": "2017-05-26T19:23:00.808",
+            "option_value": "false",
+            "project_ident": 2302,
+            "projectoptiontype_ident": 3,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2250",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        },
+        {
+            "ident": 2251,
+            "ts": "2017-05-26T19:23:00.808",
+            "option_value": "false",
+            "project_ident": 2302,
+            "projectoptiontype_ident": 1,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2251",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        },
+        {
+            "ident": 2252,
+            "ts": "2017-05-26T19:23:00.913",
+            "option_value": null,
+            "project_ident": 2302,
+            "projectoptiontype_ident": 13,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2252",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        },
+        {
+            "ident": 2253,
+            "ts": "2017-05-26T19:23:00.913",
+            "option_value": "false",
+            "project_ident": 2302,
+            "projectoptiontype_ident": 12,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2253",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        },
+        {
+            "ident": 2254,
+            "ts": "2017-05-26T19:23:00.913",
+            "option_value": "2000",
+            "project_ident": 2302,
+            "projectoptiontype_ident": 11,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2254",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        },
+        {
+            "ident": 2255,
+            "ts": "2017-05-26T19:23:00.913",
+            "option_value": "20",
+            "project_ident": 2302,
+            "projectoptiontype_ident": 9,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2255",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        },
+        {
+            "ident": 2256,
+            "ts": "2017-05-26T19:23:00.913",
+            "option_value": "100",
+            "project_ident": 2302,
+            "projectoptiontype_ident": 10,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2256",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        },
+        {
+            "ident": 2257,
+            "ts": "2017-05-26T19:23:00.914",
+            "option_value": "20",
+            "project_ident": 2302,
+            "projectoptiontype_ident": 7,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2257",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        },
+        {
+            "ident": 2258,
+            "ts": "2017-05-26T19:23:00.956",
+            "option_value": "true",
+            "project_ident": 2302,
+            "projectoptiontype_ident": 16,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2258",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        },
+        {
+            "ident": 2259,
+            "ts": "2017-05-26T19:23:00.958",
+            "option_value": "false",
+            "project_ident": 2302,
+            "projectoptiontype_ident": 19,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2259",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        },
+        {
+            "ident": 2260,
+            "ts": "2017-05-26T19:23:00.959",
+            "option_value": null,
+            "project_ident": 2302,
+            "projectoptiontype_ident": 14,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2260",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        },
+        {
+            "ident": 2261,
+            "ts": "2017-05-26T19:23:00.964",
+            "option_value": "20",
+            "project_ident": 2302,
+            "projectoptiontype_ident": 17,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2261",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        },
+        {
+            "ident": 2262,
+            "ts": "2017-05-26T19:23:00.994",
+            "option_value": "json",
+            "project_ident": 2302,
+            "projectoptiontype_ident": 15,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2262",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        },
+        {
+            "ident": 2263,
+            "ts": "2017-05-26T19:23:01.003",
+            "option_value": "false",
+            "project_ident": 2302,
+            "projectoptiontype_ident": 18,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2263",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        },
+        {
+            "ident": 2264,
+            "ts": "2017-05-26T19:23:01.026",
+            "option_value": "null",
+            "project_ident": 2302,
+            "projectoptiontype_ident": 21,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2264",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        },
+        {
+            "ident": 2265,
+            "ts": "2017-05-26T19:23:01.027",
+            "option_value": "0",
+            "project_ident": 2302,
+            "projectoptiontype_ident": 20,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2265",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        },
+        {
+            "ident": 2266,
+            "ts": "2017-05-26T19:23:01.041",
+            "option_value": "null",
+            "project_ident": 2302,
+            "projectoptiontype_ident": 22,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2266",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        },
+        {
+            "ident": 2267,
+            "ts": "2017-05-26T19:23:01.044",
+            "option_value": "null",
+            "project_ident": 2302,
+            "projectoptiontype_ident": 23,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2267",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        },
+        {
+            "ident": 2268,
+            "ts": "2017-05-26T19:23:01.051",
+            "option_value": "null",
+            "project_ident": 2302,
+            "projectoptiontype_ident": 24,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2268",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        },
+        {
+            "ident": 2269,
+            "ts": "2017-05-26T19:23:01.082",
+            "option_value": "hex",
+            "project_ident": 2302,
+            "projectoptiontype_ident": 25,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2269",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        },
+        {
+            "ident": 2270,
+            "ts": "2017-05-26T19:23:01.099",
+            "option_value": "false",
+            "project_ident": 2302,
+            "projectoptiontype_ident": 26,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2270",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        },
+        {
+            "ident": 2271,
+            "ts": "2017-05-26T19:23:01.106",
+            "option_value": "false",
+            "project_ident": 2302,
+            "projectoptiontype_ident": 27,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2271",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        },
+        {
+            "ident": 2272,
+            "ts": "2017-05-26T19:23:01.156",
+            "option_value": "root",
+            "project_ident": 2302,
+            "projectoptiontype_ident": 28,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2272",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        },
+        {
+            "ident": 2273,
+            "ts": "2017-05-26T19:23:01.157",
+            "option_value": "true",
+            "project_ident": 2302,
+            "projectoptiontype_ident": 29,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2273",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        },
+        {
+            "ident": 2274,
+            "ts": "2017-05-26T19:23:01.158",
+            "option_value": null,
+            "project_ident": 2302,
+            "projectoptiontype_ident": 30,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.ProjectOptions/2274",
+                "checksum": "A:97973b7d2e6c998a"
+            }
+        }
+    ],
+    "Relationships": [],
+    "Roles": [
+        {
+            "ident": 2307,
+            "ts": "2017-05-26T19:09:41.863",
+            "name": "API Documentation",
+            "description": "This role is special and is used when generating OpenAPI(Swagger) documentation. It is recognized by the name special name 'API Documentation' and used only for documentation calls.\n Any Resources, Tables, Views, Procedures etc. that are defined and enabled by this role are used to generate the OpenAPI(Swagger) documentation.\n If this role is assigned to a user it will NOT be used for execution permissions.\n If this role is removed or otherwise unavailable, the Swagger/OpenAPI documentation will be nothing more that a name and version.",
+            "default_table_permission": "A",
+            "default_view_permission": "R",
+            "default_apivisibility": "VRPMF",
+            "project_ident": 2302,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.Roles/2307",
+                "checksum": "A:7217127a361250b4"
+            },
+            "ApiKeyRoles": [],
+            "ApiVisibility": [],
+            "PermissionData": [],
+            "TablePermissions": []
+        },
+        {
+            "ident": 2308,
+            "ts": "2017-05-26T19:09:41.87",
+            "name": "Full access",
+            "description": "Full access to everything in this project",
+            "default_table_permission": "A",
+            "default_view_permission": "R",
+            "default_apivisibility": "TVPRMF",
+            "project_ident": 2302,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.Roles/2308",
+                "checksum": "A:7217127a361250b4"
+            },
+            "ApiKeyRoles": [{
+                "ident": 2610,
+                "ts": "2017-05-26T19:09:41.875",
+                "apikey_ident": 2607,
+                "role_ident": 2308,
+                "@metadata": {
+                    "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.Roles.ApiKeyRoles/2610",
+                    "checksum": "A:05b662428c6f2116"
+                }
+            }],
+            "ApiVisibility": [],
+            "PermissionData": [],
+            "TablePermissions": []
+        },
+        {
+            "ident": 2309,
+            "ts": "2017-05-26T19:09:41.873",
+            "name": "Read only",
+            "description": "Read-only access to everything in this project",
+            "default_table_permission": "R",
+            "default_view_permission": "R",
+            "default_apivisibility": "TVPRMF",
+            "project_ident": 2302,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.Roles/2309",
+                "checksum": "A:7217127a361250b4"
+            },
+            "ApiKeyRoles": [],
+            "ApiVisibility": [],
+            "PermissionData": [],
+            "TablePermissions": []
+        }
+    ],
+    "Users": [
+        {
+            "ident": 2306,
+            "ts": "2017-05-26T19:09:41.942",
+            "name": "admin",
+            "fullname": "Admin Account with full access",
+            "email": null,
+            "status": "A",
+            "roles": "Full access",
+            "data": null,
+            "comments": null,
+            "apikey_lifespan": null,
+            "password_hash": "KCdUwsZtTVwglh7OkhnNMkwq6g1i4969earJjubtqpWFg78j9nySXsB0gLeUU5DnyFCWWemDGK/ovq8wZxi7VA==",
+            "password_salt": "q15xSdvH+ePr/LUv0rsVsv8yabELGvO/aiqNfGs6",
+            "project_ident": 2302,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.Users/2306",
+                "checksum": "A:df7b270477eabf8d"
+            }
+        },
+        {
+            "ident": 2305,
+            "ts": "2017-05-26T19:09:41.882",
+            "name": "demo",
+            "fullname": "Demo Account with full access",
+            "email": null,
+            "status": "A",
+            "roles": "Full access",
+            "data": null,
+            "comments": null,
+            "apikey_lifespan": null,
+            "password_hash": "enPbX2QPeKXcePMQHLEE3nI40GWtNWqeVdbDaLXui38fjXIx5gvgzOXMerTvwVFWl1Pl6YRTnNTJoW4j9Va1lw==",
+            "password_salt": "UeIvfQ8vI3FgyEGkULVPlBbbNduZO4HXeAU3KKa2",
+            "project_ident": 2302,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.Users/2305",
+                "checksum": "A:df7b270477eabf8d"
+            }
+        },
+        {
+            "ident": 2307,
+            "ts": "2017-05-26T19:09:41.962",
+            "name": "guest",
+            "fullname": "Guest Account with read-only access",
+            "email": null,
+            "status": "A",
+            "roles": "Read only",
+            "data": null,
+            "comments": null,
+            "apikey_lifespan": null,
+            "password_hash": "wxNJvJFX0J0/s97Hk4ihlFfQd/7HjdnDZwjvC83CNlvmgknq4sTsnVRYDwBAq4aEp8dSIO6v2o9dio4PwXFaoA==",
+            "password_salt": "Dbo8eWO2Vsyk8SGaU8W/7GJoMoxsaHy4fdWgemO4",
+            "project_ident": 2302,
+            "@metadata": {
+                "href": "https://maclac.dev.ca.com:8083/rest/abl/admin/v2/ProjectExport.Users/2307",
+                "checksum": "A:df7b270477eabf8d"
+            }
+        }
+    ]
+}]

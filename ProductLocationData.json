@@ -1,0 +1,42 @@
+[
+    {
+        "BarcodeTagData": "78937531",
+        "FK_ProductDetail_ProductId": 1,
+        "UnitsInStock": 5
+    },
+    {
+        "BarcodeTagData": "73535635",
+        "FK_ProductDetail_ProductId": 5,
+        "UnitsInStock": 5
+    },
+    {
+        "BarcodeTagData": "12523533",
+        "FK_ProductDetail_ProductId": 2,
+        "UnitsInStock": 0
+    },
+    {
+        "BarcodeTagData": "79868234",
+        "FK_ProductDetail_ProductId": 3,
+        "UnitsInStock": 5
+    },
+    {
+        "BarcodeTagData": "93859384",
+        "FK_ProductDetail_ProductId": 5,
+        "UnitsInStock": 6
+    },
+    {
+        "BarcodeTagData": "43858342",
+        "FK_ProductDetail_ProductId": 3,
+        "UnitsInStock": 5
+    },
+    {
+        "BarcodeTagData": "28572365",
+        "FK_ProductDetail_ProductId": 1,
+        "UnitsInStock": 5
+    },
+    {
+        "BarcodeTagData": "36934785",
+        "FK_ProductDetail_ProductId": 4,
+        "UnitsInStock": 0
+    }
+]

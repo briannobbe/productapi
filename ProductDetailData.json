@@ -1,0 +1,37 @@
+[
+    {
+        "ProductSku": "79476",
+        "ProductName": "Hammer",
+        "UnitPrice": 5.34,
+        "MaxUnitsInStock": 200,
+        "AllowBackOrder": true
+    },
+    {
+        "ProductSku": "54321",
+        "ProductName": "Saw",
+        "UnitPrice": 12.34,
+        "MaxUnitsInStock": 250,
+        "AllowBackOrder": false
+    },
+    {
+        "ProductSku": "67890",
+        "ProductName": "Drill",
+        "UnitPrice": 10.12,
+        "MaxUnitsInStock": 550,
+        "AllowBackOrder": false
+    },
+    {
+        "ProductSku": "09876",
+        "ProductName": "Wrench",
+        "UnitPrice": 9.45,
+        "MaxUnitsInStock": 1000,
+        "AllowBackOrder": true
+    },
+    {
+        "ProductSku": "67589",
+        "ProductName": "Screwdriver",
+        "UnitPrice": 6.6,
+        "MaxUnitsInStock": 1000,
+        "AllowBackOrder": false
+    }
+]

@@ -1,0 +1,47 @@
+{
+    "Name": "Product API",
+    "Description": "API for getting available products to order",
+    "Version": "1",
+    "ApiEulaUuid": "4445ff1f-0137-4294-93e7-5c6e80160c06",
+    "AccessStatus": "PUBLIC or PRIVATE",
+    "SsgUrl": "apiproxy/productlocation/v1",
+    "PolicyTemplateName": "LAC Service Policy Example - OAuth 2.0",
+    "PolicyTemplateArguments": [
+        {
+            "Name": "sslEnabled",
+            "Value": "true"
+        },
+        {
+            "Name": "LAC_Role",
+            "Value": "API Owner"
+        },
+        {
+            "Name": "noAuthSwagger",
+            "Value": "true"
+        },
+        {
+            "Name": "swaggercacheTTL",
+            "Value": "300"
+        }
+    ],
+    "LACBaseURL": "/rest/default/productlocation/v1",
+    "SpecFilename": "productswaggerdef.json",
+    "LACDBSchema": [{
+        "dbPrefix": "main",
+        "FileName": "ProductInfoTablesSchema.json"
+    }],
+    "LACServiceData": [
+        {
+            "TableName": "ProductDetail",
+            "FileName": "ProductDetailData.json"
+        },
+        {
+            "TableName": "ProductLocation",
+            "FileName": "ProductLocationData.json"
+        }
+    ],
+    "GMU": "",
+    "etc.": "",
+    "etc..": "",
+    "etc...": ""
+}
