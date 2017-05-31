@@ -6,6 +6,7 @@
     "AccessStatus": "PUBLIC or PRIVATE",
     "SsgUrl": "apiproxy/productlocation/v1",
     "PolicyTemplateName": "LAC Service Policy Example - OAuth 2.0",
+    "PolicyTemplateBundle": "LACPolicyBundle.xml"
     "PolicyTemplateArguments": [
         {
             "Name": "sslEnabled",
