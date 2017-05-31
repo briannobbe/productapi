@@ -1,12 +1,12 @@
 {
     "Name": "Product API",
-    "Description": "API for getting available products to order",
+    "Description": "API for Listing Available Products to Order",
     "Version": "1",
     "ApiEulaUuid": "4445ff1f-0137-4294-93e7-5c6e80160c06",
     "AccessStatus": "PUBLIC or PRIVATE",
     "SsgUrl": "apiproxy/productlocation/v1",
     "PolicyTemplateName": "LAC Service Policy Example - OAuth 2.0",
-    "PolicyTemplateBundle": "LACPolicyBundle.xml"
+    "PolicyTemplateBundle": "LACPolicyBundle.xml",
     "PolicyTemplateArguments": [
         {
             "Name": "sslEnabled",
