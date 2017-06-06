@@ -1,9 +1,9 @@
 {
-    "Name": "Product API",
-    "Description": "API for Listing Available Products to Order",
+    "Name": "The Product API",
+    "Description": "Use this API for Listing Available Products to Order",
     "Version": "1",
-    "ApiEulaUuid": "4445ff1f-0137-4294-93e7-5c6e80160c06",
-    "AccessStatus": "PUBLIC or PRIVATE",
+    "ApiEulaName": "Standard EULA",
+    "AccessStatus": "PUBLIC",
     "SsgUrl": "apiproxy/productlocation/v1",
     "PolicyTemplateName": "LAC Service Policy Example - OAuth 2.0",
     "PolicyTemplateBundle": "LACPolicyBundle.xml",
@@ -40,9 +40,5 @@
             "TableName": "ProductLocation",
             "FileName": "ProductLocationData.json"
         }
-    ],
-    "GMU": "",
-    "etc.": "",
-    "etc..": "",
-    "etc...": ""
+    ]
 }
