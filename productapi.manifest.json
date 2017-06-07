@@ -1,7 +1,7 @@
 {
-    "Name": "The Product API",
+    "Name": "The Product API - v2",
     "Description": "Use this API for Listing Available Products to Order",
-    "Version": "1",
+    "Version": "2",
     "ApiEulaName": "Standard EULA",
     "AccessStatus": "PUBLIC",
     "SsgUrl": "apiproxy/productlocation/v1",
@@ -21,7 +21,7 @@
             "Value": "300"
         }
     ],
-    "LACBaseURL": "/rest/default/productlocation/v1",
+    "LACBaseURL": "/rest/default/productlocation/v2",
     "SpecFilename": "productswaggerdef.json",
     "LACDBSchema": [{
         "dbPrefix": "main",
