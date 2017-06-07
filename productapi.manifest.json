@@ -13,10 +13,6 @@
             "Value": "true"
         },
         {
-            "Name": "LAC_Role",
-            "Value": "API Owner"
-        },
-        {
             "Name": "noAuthSwagger",
             "Value": "true"
         },

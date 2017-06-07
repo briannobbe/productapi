@@ -709,7 +709,7 @@
                                 booleanValue="true"/&gt; &lt;L7p:Replacement stringValue=""/&gt;
                                 &lt;L7p:Target target="OTHER"/&gt; &lt;/L7p:Regex&gt;
                                 &lt;L7p:SetVariable&gt; &lt;L7p:Base64Expression
-                                stringValue="ew0KICAgICJ1c2VySWRlbnRpZmllciI6ICIiLA0KICAgICJyb2xlcyI6IFsNCiAgICAgICAgIkFQSSBPd25lciINCiAgICBdDQp9"/&gt;
+                                stringValue="ew0KICAgICJ1c2VySWRlbnRpZmllciI6ICIiLA0KICAgICJyb2xlcyI6IFsNCiAgICAgICAgIkZ1bGwgQWNjZXNzIg0KICAgIF0NCn0="/&gt;
                                 &lt;L7p:VariableToSet stringValue="x_ca_gateway_lac_header"/&gt;
                                 &lt;/L7p:SetVariable&gt; &lt;L7p:SetVariable&gt;
                                 &lt;L7p:Base64Expression
