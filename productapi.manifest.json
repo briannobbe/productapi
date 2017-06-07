@@ -4,7 +4,7 @@
     "Version": "2",
     "ApiEulaName": "Standard EULA",
     "AccessStatus": "PUBLIC",
-    "SsgUrl": "apiproxy/productlocation/v1",
+    "SsgUrl": "apiproxy/productlocation/v2",
     "PolicyTemplateName": "LAC Service Policy Example - OAuth 2.0",
     "PolicyTemplateBundle": "LACPolicyBundle.xml",
     "PolicyTemplateArguments": [
@@ -21,7 +21,7 @@
             "Value": "300"
         }
     ],
-    "LACBaseURL": "/rest/default/productlocation/v2",
+    "LACBaseURL": "/rest/default/productlocation/v1",
     "SpecFilename": "productswaggerdef.json",
     "LACDBSchema": [{
         "dbPrefix": "main",
