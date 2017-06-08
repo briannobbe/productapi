@@ -1,12 +1,12 @@
 {
-    "Name": "The Product API - v2",
+    "Name": "The Product API - v1",
     "Description": "Use this API for Listing Available Products to Order",
-    "Version": "2",
+    "Version": "1",
     "ApiEulaName": "Standard EULA",
     "AccessStatus": "PUBLIC",
-    "SsgUrl": "apiproxy/productlocation/v2",
-    "PolicyTemplateName": "LAC Service Policy Example - OAuth 2.0",
-    "PolicyTemplateBundle": "LACPolicyBundle.xml",
+    "SsgUrl": "apiproxy/productlocation/v1",
+    "PolicyTemplateName": "LAC Service Integration Template Enforcing OAuth 2.0",
+    "PolicyTemplateBundle": "LACPortalTemplateBundle.xml",
     "PolicyTemplateArguments": [
         {
             "Name": "sslEnabled",
@@ -15,6 +15,10 @@
         {
             "Name": "noAuthSwagger",
             "Value": "true"
+        },
+        {
+            "Name": "LACRole",
+            "Value": "Full access"
         },
         {
             "Name": "swaggercacheTTL",

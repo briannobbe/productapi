@@ -1,0 +1,1368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+    <l7:References>
+        <l7:Item>
+            <l7:Name>LAC Service Integration Policy Enforcing OAuth 2.0</l7:Name>
+            <l7:Id>cd44880365987da0017daf4266d003b9</l7:Id>
+            <l7:Type>POLICY</l7:Type>
+            <l7:TimeStamp>2017-06-08T01:38:44.427-04:00</l7:TimeStamp>
+            <l7:Resource>
+                <l7:Policy guid="ad857339-fd43-43bd-9917-444e33f6fce8"
+                    id="cd44880365987da0017daf4266d003b9" version="6">
+                    <l7:PolicyDetail folderId="0000000000000000ffffffffffffec76"
+                        guid="ad857339-fd43-43bd-9917-444e33f6fce8"
+                        id="cd44880365987da0017daf4266d003b9" version="6">
+                        <l7:Name>LAC Service Integration Policy Enforcing OAuth 2.0</l7:Name>
+                        <l7:PolicyType>Include</l7:PolicyType>
+                        <l7:Properties>
+                            <l7:Property key="revision">
+                                <l7:LongValue>7</l7:LongValue>
+                            </l7:Property>
+                            <l7:Property key="soap">
+                                <l7:BooleanValue>false</l7:BooleanValue>
+                            </l7:Property>
+                        </l7:Properties>
+                    </l7:PolicyDetail>
+                    <l7:Resources>
+                        <l7:ResourceSet tag="policy">
+                            <l7:Resource type="policy">&lt;?xml version=&quot;1.0&quot;
+                                encoding=&quot;UTF-8&quot;?&gt; &lt;wsp:Policy
+                                xmlns:L7p=&quot;http://www.layer7tech.com/ws/policy&quot;
+                                xmlns:wsp=&quot;http://schemas.xmlsoap.org/ws/2002/12/policy&quot;&gt;
+                                &lt;wsp:All wsp:Usage=&quot;Required&quot;&gt;
+                                &lt;L7p:AuditAssertion/&gt; &lt;L7p:CommentAssertion&gt;
+                                &lt;L7p:Comment stringValue=&quot;Still Need to fix Error
+                                Codes&quot;/&gt; &lt;/L7p:CommentAssertion&gt;
+                                &lt;L7p:CommentAssertion&gt; &lt;L7p:Comment stringValue=&quot;Need
+                                to add input for LAC Role to pass&quot;/&gt;
+                                &lt;/L7p:CommentAssertion&gt;
+                                &lt;L7p:ApiPortalEncassIntegration/&gt;
+                                &lt;L7p:AuditDetailAssertion&gt; &lt;L7p:Detail
+                                stringValue=&quot;Policy Fragment: LAC Service Policy Example
+                                Fragment - OAuth 2.0&quot;/&gt; &lt;/L7p:AuditDetailAssertion&gt;
+                                &lt;L7p:SetVariable&gt; &lt;L7p:Base64Expression
+                                stringValue=&quot;&quot;/&gt; &lt;L7p:VariableToSet
+                                stringValue=&quot;errorMsg&quot;/&gt; &lt;/L7p:SetVariable&gt;
+                                &lt;L7p:SetVariable&gt; &lt;L7p:Base64Expression
+                                stringValue=&quot;&quot;/&gt; &lt;L7p:VariableToSet
+                                stringValue=&quot;httpReturnErrorCode&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression stringValue=&quot;T0FVVEhfMg==&quot;/&gt;
+                                &lt;L7p:VariableToSet
+                                stringValue=&quot;portal.analytics.authType&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression
+                                stringValue=&quot;JHtwb3J0YWwubWFuYWdlZC5zZXJ2aWNlLmFwaUlkfQ==&quot;/&gt;
+                                &lt;L7p:VariableToSet
+                                stringValue=&quot;portal.analytics.api.uuid&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression stringValue=&quot;MA==&quot;/&gt;
+                                &lt;L7p:VariableToSet
+                                stringValue=&quot;portal.analytics.routingTotalTime&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression stringValue=&quot;&quot;/&gt;
+                                &lt;L7p:VariableToSet
+                                stringValue=&quot;portal.analytics.organization.name&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression
+                                stringValue=&quot;JHtyZXF1ZXN0Lmh0dHAudXJpfQ==&quot;/&gt;
+                                &lt;L7p:VariableToSet
+                                stringValue=&quot;portal.analytics.action&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:ExportVariables&gt;
+                                &lt;L7p:ExportedVars stringArrayValue=&quot;included&quot;&gt;
+                                &lt;L7p:item stringValue=&quot;portal.analytics.action&quot;/&gt;
+                                &lt;L7p:item stringValue=&quot;portal.analytics.api.uuid&quot;/&gt;
+                                &lt;L7p:item stringValue=&quot;portal.analytics.authType&quot;/&gt;
+                                &lt;L7p:item
+                                stringValue=&quot;portal.analytics.routingTotalTime&quot;/&gt;
+                                &lt;/L7p:ExportedVars&gt; &lt;/L7p:ExportVariables&gt;
+                                &lt;wsp:OneOrMore wsp:Usage=&quot;Required&quot;&gt; &lt;wsp:All
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;L7p:ComparisonAssertion&gt;
+                                &lt;L7p:CaseSensitive booleanValue=&quot;false&quot;/&gt;
+                                &lt;L7p:Expression1 stringValue=&quot;${sslEnabled}&quot;/&gt;
+                                &lt;L7p:Operator operatorNull=&quot;null&quot;/&gt;
+                                &lt;L7p:Predicates predicates=&quot;included&quot;&gt; &lt;L7p:item
+                                dataType=&quot;included&quot;&gt; &lt;L7p:Type
+                                variableDataType=&quot;boolean&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;L7p:item binary=&quot;included&quot;&gt; &lt;L7p:CaseSensitive
+                                booleanValue=&quot;false&quot;/&gt; &lt;L7p:RightValue
+                                stringValue=&quot;true&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;/L7p:Predicates&gt; &lt;/L7p:ComparisonAssertion&gt;
+                                &lt;wsp:OneOrMore wsp:Usage=&quot;Required&quot;&gt; &lt;wsp:All
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;L7p:SslAssertion/&gt;
+                                &lt;L7p:SetVariable&gt; &lt;L7p:Base64Expression
+                                stringValue=&quot;aHR0cHM=&quot;/&gt; &lt;L7p:VariableToSet
+                                stringValue=&quot;inbound.http.proto&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:assertionComment&gt;
+                                &lt;L7p:Properties mapValue=&quot;included&quot;&gt;
+                                &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot; // This branch is executed because SSL is
+                                supposed to be enforced&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;/L7p:Properties&gt; &lt;/L7p:assertionComment&gt;
+                                &lt;/wsp:All&gt; &lt;wsp:All wsp:Usage=&quot;Required&quot;&gt;
+                                &lt;L7p:SetVariable&gt; &lt;L7p:AssertionComment
+                                assertionComment=&quot;included&quot;&gt; &lt;L7p:Properties
+                                mapValue=&quot;included&quot;&gt; &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot; // If this assertion fires, SSL error, API will
+                                stop processing and return error&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;/L7p:Properties&gt; &lt;/L7p:AssertionComment&gt;
+                                &lt;L7p:Base64Expression
+                                stringValue=&quot;U1NMIHJlcXVpcmVk&quot;/&gt; &lt;L7p:VariableToSet
+                                stringValue=&quot;errorMsg&quot;/&gt; &lt;/L7p:SetVariable&gt;
+                                &lt;L7p:SetVariable&gt; &lt;L7p:Base64Expression
+                                stringValue=&quot;NDAw&quot;/&gt; &lt;L7p:VariableToSet
+                                stringValue=&quot;httpReturnErrorCode&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;/wsp:All&gt; &lt;/wsp:OneOrMore&gt;
+                                &lt;L7p:assertionComment&gt; &lt;L7p:Properties
+                                mapValue=&quot;included&quot;&gt; &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot;//enforce inbound SSL if API publisher checked
+                                setting in portal when publishing API&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;/L7p:Properties&gt; &lt;/L7p:assertionComment&gt;
+                                &lt;/wsp:All&gt; &lt;wsp:All wsp:Usage=&quot;Required&quot;&gt;
+                                &lt;L7p:SetVariable&gt; &lt;L7p:Base64Expression
+                                stringValue=&quot;aHR0cA==&quot;/&gt; &lt;L7p:VariableToSet
+                                stringValue=&quot;inbound.http.proto&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:TrueAssertion/&gt;
+                                &lt;L7p:assertionComment&gt; &lt;L7p:Properties
+                                mapValue=&quot;included&quot;&gt; &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot; // SSL was not required and request was sent over
+                                http&quot;/&gt; &lt;/L7p:entry&gt; &lt;/L7p:Properties&gt;
+                                &lt;/L7p:assertionComment&gt; &lt;/wsp:All&gt;
+                                &lt;L7p:assertionComment&gt; &lt;L7p:Properties
+                                mapValue=&quot;included&quot;&gt; &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot; // This branch controls SSL enforcement and sets
+                                var to indicate which protocol was used&quot;/&gt;
+                                &lt;/L7p:entry&gt; &lt;/L7p:Properties&gt;
+                                &lt;/L7p:assertionComment&gt; &lt;/wsp:OneOrMore&gt;
+                                &lt;L7p:SetVariable&gt; &lt;L7p:AssertionComment
+                                assertionComment=&quot;included&quot;&gt; &lt;L7p:Properties
+                                mapValue=&quot;included&quot;&gt; &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot; // Set forwarded Header to LAC to use for URL
+                                rewrite directives&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;/L7p:Properties&gt; &lt;/L7p:AssertionComment&gt;
+                                &lt;L7p:Base64Expression
+                                stringValue=&quot;aG9zdD0iJHtyZXF1ZXN0Lmh0dHAuaGVhZGVyLmhvc3R9IjsgcHJvdG89JHtpbmJvdW5kLmh0dHAucHJvdG99OyBjYS1sYWMtYmFzZXBhdGg9Ii8ke3NlcnZpY2VVcmx9Ig==&quot;/&gt;
+                                &lt;L7p:VariableToSet
+                                stringValue=&quot;forwardedHeaderValues&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;wsp:OneOrMore
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;wsp:All
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;L7p:ComparisonAssertion&gt;
+                                &lt;L7p:CaseSensitive booleanValue=&quot;false&quot;/&gt;
+                                &lt;L7p:Expression1 stringValue=&quot;${errorMsg}&quot;/&gt;
+                                &lt;L7p:Operator operatorNull=&quot;null&quot;/&gt;
+                                &lt;L7p:Predicates predicates=&quot;included&quot;&gt; &lt;L7p:item
+                                dataType=&quot;included&quot;&gt; &lt;L7p:Type
+                                variableDataType=&quot;string&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;L7p:item binary=&quot;included&quot;&gt; &lt;L7p:Operator
+                                operator=&quot;EMPTY&quot;/&gt; &lt;L7p:RightValue
+                                stringValue=&quot;&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;/L7p:Predicates&gt; &lt;/L7p:ComparisonAssertion&gt;
+                                &lt;wsp:OneOrMore wsp:Usage=&quot;Required&quot;&gt;
+                                &lt;L7p:CacheLookup&gt; &lt;L7p:AssertionComment
+                                assertionComment=&quot;included&quot;&gt; &lt;L7p:Properties
+                                mapValue=&quot;included&quot;&gt; &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot; // Lookup Swagger from Cache&quot;/&gt;
+                                &lt;/L7p:entry&gt; &lt;/L7p:Properties&gt;
+                                &lt;/L7p:AssertionComment&gt; &lt;L7p:CacheEntryKey
+                                stringValue=&quot;${serviceUrl}&quot;/&gt; &lt;L7p:CacheId
+                                stringValue=&quot;swaggerCache&quot;/&gt;
+                                &lt;L7p:ContentTypeOverride stringValue=&quot;&quot;/&gt;
+                                &lt;L7p:MaxEntryAgeSeconds
+                                stringValue=&quot;${swaggercacheTTL}&quot;/&gt;
+                                &lt;L7p:OtherTargetMessageVariable
+                                stringValue=&quot;swaggerDoc&quot;/&gt; &lt;L7p:Target
+                                target=&quot;OTHER&quot;/&gt; &lt;/L7p:CacheLookup&gt; &lt;wsp:All
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;wsp:OneOrMore
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;wsp:All
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;L7p:AddHeader&gt;
+                                &lt;L7p:HeaderName stringValue=&quot;Forwarded&quot;/&gt;
+                                &lt;L7p:HeaderValue
+                                stringValue=&quot;${forwardedHeaderValues}&quot;/&gt;
+                                &lt;L7p:RemoveExisting booleanValue=&quot;true&quot;/&gt;
+                                &lt;/L7p:AddHeader&gt; &lt;L7p:HttpRoutingAssertion&gt;
+                                &lt;L7p:FollowRedirects booleanValue=&quot;true&quot;/&gt;
+                                &lt;L7p:HttpMethod httpMethod=&quot;GET&quot;/&gt;
+                                &lt;L7p:ProtectedServiceUrl
+                                stringValue=&quot;${apiLocation}/@docs&quot;/&gt;
+                                &lt;L7p:ProxyPassword stringValueNull=&quot;null&quot;/&gt;
+                                &lt;L7p:ProxyUsername stringValueNull=&quot;null&quot;/&gt;
+                                &lt;L7p:RequestHeaderRules
+                                httpPassthroughRuleSet=&quot;included&quot;&gt; &lt;L7p:ForwardAll
+                                booleanValue=&quot;true&quot;/&gt; &lt;L7p:Rules
+                                httpPassthroughRules=&quot;included&quot;&gt; &lt;L7p:item
+                                httpPassthroughRule=&quot;included&quot;&gt; &lt;L7p:Name
+                                stringValue=&quot;Cookie&quot;/&gt; &lt;/L7p:item&gt; &lt;L7p:item
+                                httpPassthroughRule=&quot;included&quot;&gt; &lt;L7p:Name
+                                stringValue=&quot;SOAPAction&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;/L7p:Rules&gt; &lt;/L7p:RequestHeaderRules&gt;
+                                &lt;L7p:RequestParamRules
+                                httpPassthroughRuleSet=&quot;included&quot;&gt; &lt;L7p:ForwardAll
+                                booleanValue=&quot;true&quot;/&gt; &lt;L7p:Rules
+                                httpPassthroughRules=&quot;included&quot;/&gt;
+                                &lt;/L7p:RequestParamRules&gt; &lt;L7p:ResponseHeaderRules
+                                httpPassthroughRuleSet=&quot;included&quot;&gt; &lt;L7p:ForwardAll
+                                booleanValue=&quot;true&quot;/&gt; &lt;L7p:Rules
+                                httpPassthroughRules=&quot;included&quot;&gt; &lt;L7p:item
+                                httpPassthroughRule=&quot;included&quot;&gt; &lt;L7p:Name
+                                stringValue=&quot;Set-Cookie&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;/L7p:Rules&gt; &lt;/L7p:ResponseHeaderRules&gt;
+                                &lt;L7p:ResponseMsgDest stringValue=&quot;swaggerDoc&quot;/&gt;
+                                &lt;/L7p:HttpRoutingAssertion&gt; &lt;L7p:assertionComment&gt;
+                                &lt;L7p:Properties mapValue=&quot;included&quot;&gt;
+                                &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot; // GET the swagger from LAC&quot;/&gt;
+                                &lt;/L7p:entry&gt; &lt;/L7p:Properties&gt;
+                                &lt;/L7p:assertionComment&gt; &lt;/wsp:All&gt; &lt;wsp:All
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression
+                                stringValue=&quot;VW5hYmxlIHRvIG9idGFpbiBTd2FnZ2VyIERvY3VtZW50IGZyb20gTEFD&quot;/&gt;
+                                &lt;L7p:VariableToSet stringValue=&quot;errorMsg&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression stringValue=&quot;NDA0&quot;/&gt;
+                                &lt;L7p:DataType variableDataType=&quot;int&quot;/&gt;
+                                &lt;L7p:VariableToSet
+                                stringValue=&quot;httpReturnErrorCode&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:FalseAssertion/&gt;
+                                &lt;L7p:assertionComment&gt; &lt;L7p:Properties
+                                mapValue=&quot;included&quot;&gt; &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot; // GET swagger from LAC failed, set error message
+                                for return&quot;/&gt; &lt;/L7p:entry&gt; &lt;/L7p:Properties&gt;
+                                &lt;/L7p:assertionComment&gt; &lt;/wsp:All&gt;
+                                &lt;/wsp:OneOrMore&gt; &lt;wsp:All
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;L7p:ComparisonAssertion&gt;
+                                &lt;L7p:CaseSensitive booleanValue=&quot;false&quot;/&gt;
+                                &lt;L7p:Expression1 stringValue=&quot;${errorMsg}&quot;/&gt;
+                                &lt;L7p:Operator operatorNull=&quot;null&quot;/&gt;
+                                &lt;L7p:Predicates predicates=&quot;included&quot;&gt; &lt;L7p:item
+                                dataType=&quot;included&quot;&gt; &lt;L7p:Type
+                                variableDataType=&quot;string&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;L7p:item binary=&quot;included&quot;&gt; &lt;L7p:Operator
+                                operator=&quot;EMPTY&quot;/&gt; &lt;L7p:RightValue
+                                stringValue=&quot;&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;/L7p:Predicates&gt; &lt;/L7p:ComparisonAssertion&gt;
+                                &lt;L7p:CacheStorage&gt; &lt;L7p:CacheEntryKey
+                                stringValue=&quot;${serviceUrl}&quot;/&gt; &lt;L7p:CacheId
+                                stringValue=&quot;swaggerCache&quot;/&gt; &lt;L7p:MaxEntries
+                                stringValue=&quot;1&quot;/&gt; &lt;L7p:MaxEntryAgeSeconds
+                                stringValue=&quot;${swaggercacheTTL}&quot;/&gt;
+                                &lt;L7p:MaxEntrySizeBytes stringValue=&quot;1500000&quot;/&gt;
+                                &lt;L7p:OtherTargetMessageVariable
+                                stringValue=&quot;swaggerDoc&quot;/&gt; &lt;L7p:Target
+                                target=&quot;OTHER&quot;/&gt; &lt;/L7p:CacheStorage&gt;
+                                &lt;L7p:assertionComment&gt; &lt;L7p:Properties
+                                mapValue=&quot;included&quot;&gt; &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot; // GET swagger worked, now cache for TTL
+                                time&quot;/&gt; &lt;/L7p:entry&gt; &lt;/L7p:Properties&gt;
+                                &lt;/L7p:assertionComment&gt; &lt;/wsp:All&gt;
+                                &lt;L7p:assertionComment&gt; &lt;L7p:Properties
+                                mapValue=&quot;included&quot;&gt; &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot; // Invalid Cache, get swagger doc and
+                                cache&quot;/&gt; &lt;/L7p:entry&gt; &lt;/L7p:Properties&gt;
+                                &lt;/L7p:assertionComment&gt; &lt;/wsp:All&gt;
+                                &lt;/wsp:OneOrMore&gt; &lt;/wsp:All&gt; &lt;L7p:TrueAssertion/&gt;
+                                &lt;L7p:assertionComment&gt; &lt;L7p:Properties
+                                mapValue=&quot;included&quot;&gt; &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot; // This branch checks cache for swagger doc, and
+                                gets it from LAC if invalid in cache&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;/L7p:Properties&gt; &lt;/L7p:assertionComment&gt;
+                                &lt;/wsp:OneOrMore&gt; &lt;wsp:OneOrMore
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;wsp:All
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;L7p:ComparisonAssertion&gt;
+                                &lt;L7p:CaseSensitive booleanValue=&quot;false&quot;/&gt;
+                                &lt;L7p:Expression1 stringValue=&quot;${errorMsg}&quot;/&gt;
+                                &lt;L7p:Operator operatorNull=&quot;null&quot;/&gt;
+                                &lt;L7p:Predicates predicates=&quot;included&quot;&gt; &lt;L7p:item
+                                dataType=&quot;included&quot;&gt; &lt;L7p:Type
+                                variableDataType=&quot;string&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;L7p:item binary=&quot;included&quot;&gt; &lt;L7p:Operator
+                                operator=&quot;EMPTY&quot;/&gt; &lt;L7p:RightValue
+                                stringValue=&quot;&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;/L7p:Predicates&gt; &lt;/L7p:ComparisonAssertion&gt;
+                                &lt;L7p:ComparisonAssertion&gt; &lt;L7p:CaseSensitive
+                                booleanValue=&quot;false&quot;/&gt; &lt;L7p:Expression1
+                                stringValue=&quot;${request.http.method}&quot;/&gt;
+                                &lt;L7p:Expression2 stringValue=&quot;GET&quot;/&gt;
+                                &lt;L7p:Predicates predicates=&quot;included&quot;&gt; &lt;L7p:item
+                                binary=&quot;included&quot;&gt; &lt;L7p:CaseSensitive
+                                booleanValue=&quot;false&quot;/&gt; &lt;L7p:RightValue
+                                stringValue=&quot;GET&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;/L7p:Predicates&gt; &lt;/L7p:ComparisonAssertion&gt;
+                                &lt;L7p:Regex&gt; &lt;L7p:AutoTarget
+                                booleanValue=&quot;false&quot;/&gt; &lt;L7p:CaseInsensitive
+                                booleanValue=&quot;true&quot;/&gt;
+                                &lt;L7p:IncludeEntireExpressionCapture
+                                booleanValue=&quot;false&quot;/&gt;
+                                &lt;L7p:OtherTargetMessageVariable
+                                stringValue=&quot;request.http.uri&quot;/&gt; &lt;L7p:Regex
+                                stringValue=&quot;^.*/@docs$&quot;/&gt; &lt;L7p:RegexName
+                                stringValue=&quot;Confirm if Swagger Document Request&quot;/&gt;
+                                &lt;L7p:Replacement stringValue=&quot;&quot;/&gt; &lt;L7p:Target
+                                target=&quot;OTHER&quot;/&gt; &lt;/L7p:Regex&gt;
+                                &lt;L7p:ComparisonAssertion&gt; &lt;L7p:CaseSensitive
+                                booleanValue=&quot;false&quot;/&gt; &lt;L7p:Expression1
+                                stringValue=&quot;${noAuthSwagger}&quot;/&gt; &lt;L7p:Operator
+                                operatorNull=&quot;null&quot;/&gt; &lt;L7p:Predicates
+                                predicates=&quot;included&quot;&gt; &lt;L7p:item
+                                dataType=&quot;included&quot;&gt; &lt;L7p:Type
+                                variableDataType=&quot;boolean&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;L7p:item binary=&quot;included&quot;&gt; &lt;L7p:CaseSensitive
+                                booleanValue=&quot;false&quot;/&gt; &lt;L7p:RightValue
+                                stringValue=&quot;true&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;/L7p:Predicates&gt; &lt;/L7p:ComparisonAssertion&gt;
+                                &lt;L7p:HardcodedResponse&gt; &lt;L7p:Base64ResponseBody
+                                stringValue=&quot;JHtzd2FnZ2VyRG9jfQ==&quot;/&gt;
+                                &lt;L7p:ResponseContentType
+                                stringValue=&quot;application/json&quot;/&gt;
+                                &lt;/L7p:HardcodedResponse&gt; &lt;L7p:assertionComment&gt;
+                                &lt;L7p:Properties mapValue=&quot;included&quot;&gt;
+                                &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot; // This branch will process unsecure GET for
+                                swagger doc if allowed by publisher&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;/L7p:Properties&gt; &lt;/L7p:assertionComment&gt;
+                                &lt;/wsp:All&gt; &lt;wsp:All wsp:Usage=&quot;Required&quot;&gt;
+                                &lt;L7p:ComparisonAssertion&gt; &lt;L7p:CaseSensitive
+                                booleanValue=&quot;false&quot;/&gt; &lt;L7p:Expression1
+                                stringValue=&quot;${errorMsg}&quot;/&gt; &lt;L7p:Operator
+                                operatorNull=&quot;null&quot;/&gt; &lt;L7p:Predicates
+                                predicates=&quot;included&quot;&gt; &lt;L7p:item
+                                dataType=&quot;included&quot;&gt; &lt;L7p:Type
+                                variableDataType=&quot;string&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;L7p:item binary=&quot;included&quot;&gt; &lt;L7p:Operator
+                                operator=&quot;EMPTY&quot;/&gt; &lt;L7p:RightValue
+                                stringValue=&quot;&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;/L7p:Predicates&gt; &lt;/L7p:ComparisonAssertion&gt;
+                                &lt;L7p:ComparisonAssertion&gt; &lt;L7p:CaseSensitive
+                                booleanValue=&quot;false&quot;/&gt; &lt;L7p:Expression1
+                                stringValue=&quot;${request.http.method}&quot;/&gt;
+                                &lt;L7p:Expression2 stringValue=&quot;GET&quot;/&gt;
+                                &lt;L7p:Predicates predicates=&quot;included&quot;&gt; &lt;L7p:item
+                                binary=&quot;included&quot;&gt; &lt;L7p:CaseSensitive
+                                booleanValue=&quot;false&quot;/&gt; &lt;L7p:RightValue
+                                stringValue=&quot;GET&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;/L7p:Predicates&gt; &lt;/L7p:ComparisonAssertion&gt;
+                                &lt;L7p:Regex&gt; &lt;L7p:AutoTarget
+                                booleanValue=&quot;false&quot;/&gt; &lt;L7p:CaseInsensitive
+                                booleanValue=&quot;true&quot;/&gt;
+                                &lt;L7p:IncludeEntireExpressionCapture
+                                booleanValue=&quot;false&quot;/&gt;
+                                &lt;L7p:OtherTargetMessageVariable
+                                stringValue=&quot;request.http.uri&quot;/&gt; &lt;L7p:Regex
+                                stringValue=&quot;^.*/@docs$&quot;/&gt; &lt;L7p:RegexName
+                                stringValue=&quot;Confirm if Swagger Document Request&quot;/&gt;
+                                &lt;L7p:Replacement stringValue=&quot;&quot;/&gt; &lt;L7p:Target
+                                target=&quot;OTHER&quot;/&gt; &lt;/L7p:Regex&gt;
+                                &lt;L7p:ComparisonAssertion&gt; &lt;L7p:CaseSensitive
+                                booleanValue=&quot;false&quot;/&gt; &lt;L7p:Expression1
+                                stringValue=&quot;${noAuthSwagger}&quot;/&gt; &lt;L7p:Operator
+                                operatorNull=&quot;null&quot;/&gt; &lt;L7p:Predicates
+                                predicates=&quot;included&quot;&gt; &lt;L7p:item
+                                dataType=&quot;included&quot;&gt; &lt;L7p:Type
+                                variableDataType=&quot;boolean&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;L7p:item binary=&quot;included&quot;&gt; &lt;L7p:CaseSensitive
+                                booleanValue=&quot;false&quot;/&gt; &lt;L7p:RightValue
+                                stringValue=&quot;false&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;/L7p:Predicates&gt; &lt;/L7p:ComparisonAssertion&gt;
+                                &lt;wsp:OneOrMore wsp:Usage=&quot;Required&quot;&gt; &lt;wsp:All
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;L7p:Encapsulated&gt;
+                                &lt;L7p:EncapsulatedAssertionConfigGuid
+                                stringValue=&quot;393bcb93-82ad-4b55-8333-1119f607a560&quot;/&gt;
+                                &lt;L7p:EncapsulatedAssertionConfigName stringValue=&quot;OTK
+                                Require OAuth 2.0 Token&quot;/&gt; &lt;L7p:Parameters
+                                mapValue=&quot;included&quot;&gt; &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;cache_lifetime&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot;0&quot;/&gt; &lt;/L7p:entry&gt; &lt;L7p:entry&gt;
+                                &lt;L7p:key stringValue=&quot;given_access_token&quot;/&gt;
+                                &lt;L7p:value stringValue=&quot;&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;L7p:entry&gt; &lt;L7p:key stringValue=&quot;onetime&quot;/&gt;
+                                &lt;L7p:value stringValue=&quot;false&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;scope_fail&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot;false&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;scope_required&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot;&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;/L7p:Parameters&gt; &lt;/L7p:Encapsulated&gt;
+                                &lt;L7p:HardcodedResponse&gt; &lt;L7p:Base64ResponseBody
+                                stringValue=&quot;JHtzd2FnZ2VyRG9jfQ==&quot;/&gt;
+                                &lt;L7p:ResponseContentType
+                                stringValue=&quot;application/json&quot;/&gt;
+                                &lt;/L7p:HardcodedResponse&gt; &lt;L7p:assertionComment&gt;
+                                &lt;L7p:Properties mapValue=&quot;included&quot;&gt;
+                                &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot; // Validate OAuth Token before returning swagger
+                                doc&quot;/&gt; &lt;/L7p:entry&gt; &lt;/L7p:Properties&gt;
+                                &lt;/L7p:assertionComment&gt; &lt;/wsp:All&gt; &lt;wsp:All
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:AssertionComment assertionComment=&quot;included&quot;&gt;
+                                &lt;L7p:Properties mapValue=&quot;included&quot;&gt;
+                                &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot; // If this assertion fires, OAuth Error, API will
+                                stop processing and return error&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;/L7p:Properties&gt; &lt;/L7p:AssertionComment&gt;
+                                &lt;L7p:Base64Expression
+                                stringValue=&quot;SW52YWxpZCBvciBNaXNzaW5nIEJlYXJlciBUb2tlbg==&quot;/&gt;
+                                &lt;L7p:VariableToSet stringValue=&quot;errorMsg&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression stringValue=&quot;NDA0&quot;/&gt;
+                                &lt;L7p:VariableToSet
+                                stringValue=&quot;httpReturnErrorCode&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:FalseAssertion/&gt;
+                                &lt;/wsp:All&gt; &lt;/wsp:OneOrMore&gt; &lt;L7p:assertionComment&gt;
+                                &lt;L7p:Properties mapValue=&quot;included&quot;&gt;
+                                &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot; // This branch will process secure GET for
+                                swagger doc if required by publisher&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;/L7p:Properties&gt; &lt;/L7p:assertionComment&gt;
+                                &lt;/wsp:All&gt; &lt;wsp:All wsp:Usage=&quot;Required&quot;&gt;
+                                &lt;L7p:ComparisonAssertion&gt; &lt;L7p:CaseSensitive
+                                booleanValue=&quot;false&quot;/&gt; &lt;L7p:Expression1
+                                stringValue=&quot;${errorMsg}&quot;/&gt; &lt;L7p:Operator
+                                operatorNull=&quot;null&quot;/&gt; &lt;L7p:Predicates
+                                predicates=&quot;included&quot;&gt; &lt;L7p:item
+                                dataType=&quot;included&quot;&gt; &lt;L7p:Type
+                                variableDataType=&quot;string&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;L7p:item binary=&quot;included&quot;&gt; &lt;L7p:Operator
+                                operator=&quot;EMPTY&quot;/&gt; &lt;L7p:RightValue
+                                stringValue=&quot;&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;/L7p:Predicates&gt; &lt;/L7p:ComparisonAssertion&gt;
+                                &lt;wsp:OneOrMore wsp:Usage=&quot;Required&quot;&gt;
+                                &lt;L7p:Swagger&gt; &lt;L7p:ServiceBase
+                                stringValue=&quot;/${serviceUrl}&quot;/&gt; &lt;L7p:SwaggerDoc
+                                stringValue=&quot;swaggerDoc&quot;/&gt; &lt;/L7p:Swagger&gt;
+                                &lt;wsp:All wsp:Usage=&quot;Required&quot;&gt;
+                                &lt;L7p:SetVariable&gt; &lt;L7p:AssertionComment
+                                assertionComment=&quot;included&quot;&gt; &lt;L7p:Properties
+                                mapValue=&quot;included&quot;&gt; &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot; // If this assertion fires, Swagger Doc
+                                validation error&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;/L7p:Properties&gt; &lt;/L7p:AssertionComment&gt;
+                                &lt;L7p:Base64Expression
+                                stringValue=&quot;QVBJIHJlcXVlc3QgZG9lcyBub3QgbWF0Y2ggZGVmaW5pdGlvbg==&quot;/&gt;
+                                &lt;L7p:VariableToSet stringValue=&quot;errorMsg&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression stringValue=&quot;NDA0&quot;/&gt;
+                                &lt;L7p:VariableToSet
+                                stringValue=&quot;httpReturnErrorCode&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:FalseAssertion/&gt;
+                                &lt;/wsp:All&gt; &lt;L7p:assertionComment&gt; &lt;L7p:Properties
+                                mapValue=&quot;included&quot;&gt; &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot; // Ensure API request is for valid resource as
+                                per Swagger documentation&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;/L7p:Properties&gt; &lt;/L7p:assertionComment&gt;
+                                &lt;/wsp:OneOrMore&gt; &lt;L7p:Encapsulated&gt;
+                                &lt;L7p:AssertionComment assertionComment=&quot;included&quot;&gt;
+                                &lt;L7p:Properties mapValue=&quot;included&quot;&gt;
+                                &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;LEFT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot;validateOAuthToken() &quot;/&gt;
+                                &lt;/L7p:entry&gt; &lt;/L7p:Properties&gt;
+                                &lt;/L7p:AssertionComment&gt;
+                                &lt;L7p:EncapsulatedAssertionConfigGuid
+                                stringValue=&quot;393bcb93-82ad-4b55-8333-1119f607a560&quot;/&gt;
+                                &lt;L7p:EncapsulatedAssertionConfigName stringValue=&quot;OTK
+                                Require OAuth 2.0 Token&quot;/&gt; &lt;L7p:Parameters
+                                mapValue=&quot;included&quot;&gt; &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;cache_lifetime&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot;0&quot;/&gt; &lt;/L7p:entry&gt; &lt;L7p:entry&gt;
+                                &lt;L7p:key stringValue=&quot;given_access_token&quot;/&gt;
+                                &lt;L7p:value stringValue=&quot;&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;L7p:entry&gt; &lt;L7p:key stringValue=&quot;onetime&quot;/&gt;
+                                &lt;L7p:value stringValue=&quot;false&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;scope_fail&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot;false&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;scope_required&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot;&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;/L7p:Parameters&gt; &lt;/L7p:Encapsulated&gt;
+                                &lt;L7p:CommentAssertion&gt; &lt;L7p:Comment
+                                stringValue=&quot;============================&quot;/&gt;
+                                &lt;/L7p:CommentAssertion&gt; &lt;L7p:CommentAssertion&gt;
+                                &lt;L7p:Comment stringValue=&quot;= API Portal Integration
+                                components below =&quot;/&gt; &lt;/L7p:CommentAssertion&gt;
+                                &lt;L7p:CommentAssertion&gt; &lt;L7p:Comment
+                                stringValue=&quot;============================&quot;/&gt;
+                                &lt;/L7p:CommentAssertion&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression
+                                stringValue=&quot;VW5hYmxlIHRvIHJvdXRlIEFQSQ==&quot;/&gt;
+                                &lt;L7p:VariableToSet stringValue=&quot;errorMsg&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;wsp:All
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:AssertionComment assertionComment=&quot;included&quot;&gt;
+                                &lt;L7p:Properties mapValue=&quot;included&quot;&gt;
+                                &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;LEFT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot;getRequestedApiResource()&quot;/&gt;
+                                &lt;/L7p:entry&gt; &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot;// capture the API resource requested&quot;/&gt;
+                                &lt;/L7p:entry&gt; &lt;/L7p:Properties&gt;
+                                &lt;/L7p:AssertionComment&gt; &lt;L7p:Base64Expression
+                                stringValue=&quot;JHtyZXF1ZXN0Lmh0dHAudXJpfQ==&quot;/&gt;
+                                &lt;L7p:VariableToSet stringValue=&quot;apiResource&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:AssertionComment assertionComment=&quot;included&quot;&gt;
+                                &lt;L7p:Properties mapValue=&quot;included&quot;&gt;
+                                &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;LEFT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot;getRequestApiKey()&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot;// parse API key from request&quot;/&gt;
+                                &lt;/L7p:entry&gt; &lt;/L7p:Properties&gt;
+                                &lt;/L7p:AssertionComment&gt; &lt;L7p:Base64Expression
+                                stringValue=&quot;JHtzZXNzaW9uLmNsaWVudF9pZH0=&quot;/&gt;
+                                &lt;L7p:VariableToSet stringValue=&quot;lookupApiKey&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;wsp:All
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;L7p:Encapsulated&gt;
+                                &lt;L7p:EncapsulatedAssertionConfigGuid
+                                stringValue=&quot;d6b48093-4288-44b3-977e-712fdac328e6&quot;/&gt;
+                                &lt;L7p:EncapsulatedAssertionConfigName stringValue=&quot;Portal
+                                Look Up API Key&quot;/&gt; &lt;L7p:Parameters
+                                mapValue=&quot;included&quot;&gt; &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;apikey&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot;${lookupApiKey}&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;L7p:entry&gt; &lt;L7p:key stringValue=&quot;serviceid&quot;/&gt;
+                                &lt;L7p:value
+                                stringValue=&quot;${portal.managed.service.apiId}&quot;/&gt;
+                                &lt;/L7p:entry&gt; &lt;/L7p:Parameters&gt; &lt;/L7p:Encapsulated&gt;
+                                &lt;wsp:OneOrMore wsp:Usage=&quot;Required&quot;&gt; &lt;wsp:All
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;L7p:ComparisonAssertion&gt;
+                                &lt;L7p:CaseSensitive booleanValue=&quot;false&quot;/&gt;
+                                &lt;L7p:Expression1
+                                stringValue=&quot;${apiKeyRecord.found}&quot;/&gt; &lt;L7p:Operator
+                                operatorNull=&quot;null&quot;/&gt; &lt;L7p:Predicates
+                                predicates=&quot;included&quot;&gt; &lt;L7p:item
+                                dataType=&quot;included&quot;&gt; &lt;L7p:Type
+                                variableDataType=&quot;string&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;L7p:item binary=&quot;included&quot;&gt; &lt;L7p:RightValue
+                                stringValue=&quot;true&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;/L7p:Predicates&gt; &lt;/L7p:ComparisonAssertion&gt;
+                                &lt;L7p:ComparisonAssertion&gt; &lt;L7p:CaseSensitive
+                                booleanValue=&quot;false&quot;/&gt; &lt;L7p:Expression1
+                                stringValue=&quot;${apiKeyRecord.service}&quot;/&gt;
+                                &lt;L7p:Operator operatorNull=&quot;null&quot;/&gt;
+                                &lt;L7p:Predicates predicates=&quot;included&quot;&gt; &lt;L7p:item
+                                dataType=&quot;included&quot;&gt; &lt;L7p:Type
+                                variableDataType=&quot;string&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;L7p:item binary=&quot;included&quot;&gt; &lt;L7p:RightValue
+                                stringValue=&quot;${portal.managed.service.apiId}&quot;/&gt;
+                                &lt;/L7p:item&gt; &lt;/L7p:Predicates&gt;
+                                &lt;/L7p:ComparisonAssertion&gt; &lt;L7p:ComparisonAssertion&gt;
+                                &lt;L7p:CaseSensitive booleanValue=&quot;false&quot;/&gt;
+                                &lt;L7p:Expression1
+                                stringValue=&quot;${apiKeyRecord.status}&quot;/&gt; &lt;L7p:Operator
+                                operatorNull=&quot;null&quot;/&gt; &lt;L7p:Predicates
+                                predicates=&quot;included&quot;&gt; &lt;L7p:item
+                                dataType=&quot;included&quot;&gt; &lt;L7p:Type
+                                variableDataType=&quot;string&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;L7p:item binary=&quot;included&quot;&gt; &lt;L7p:RightValue
+                                stringValue=&quot;active&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;/L7p:Predicates&gt; &lt;/L7p:ComparisonAssertion&gt;
+                                &lt;L7p:SetVariable&gt; &lt;L7p:Base64Expression
+                                stringValue=&quot;dHJ1ZQ==&quot;/&gt; &lt;L7p:VariableToSet
+                                stringValue=&quot;apiAuthz&quot;/&gt; &lt;/L7p:SetVariable&gt;
+                                &lt;L7p:SetVariable&gt; &lt;L7p:Base64Expression
+                                stringValue=&quot;JHthcGlrZXlSZWNvcmQueG1sfQ==&quot;/&gt;
+                                &lt;L7p:ContentType stringValue=&quot;text/xml;
+                                charset=utf-8&quot;/&gt; &lt;L7p:DataType
+                                variableDataType=&quot;message&quot;/&gt; &lt;L7p:VariableToSet
+                                stringValue=&quot;recordXml&quot;/&gt; &lt;/L7p:SetVariable&gt;
+                                &lt;L7p:ResponseXpathAssertion&gt; &lt;L7p:VariablePrefix
+                                stringValue=&quot;customFieldsMetadata&quot;/&gt; &lt;L7p:XmlMsgSrc
+                                stringValue=&quot;recordXml&quot;/&gt; &lt;L7p:XpathExpression
+                                xpathExpressionValue=&quot;included&quot;&gt; &lt;L7p:Expression
+                                stringValue=&quot;/l7:ApiKey/l7:CustomMetaData&quot;/&gt;
+                                &lt;L7p:Namespaces mapValue=&quot;included&quot;&gt;
+                                &lt;L7p:entry&gt; &lt;L7p:key stringValue=&quot;s&quot;/&gt;
+                                &lt;L7p:value
+                                stringValue=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;/&gt;
+                                &lt;/L7p:entry&gt; &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;l7&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot;http://ns.l7tech.com/2012/04/api-management&quot;/&gt;
+                                &lt;/L7p:entry&gt; &lt;/L7p:Namespaces&gt; &lt;L7p:XpathVersion
+                                xpathVersion=&quot;XPATH_1_0&quot;/&gt; &lt;/L7p:XpathExpression&gt;
+                                &lt;/L7p:ResponseXpathAssertion&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression
+                                stringValue=&quot;JHtjdXN0b21GaWVsZHNNZXRhZGF0YS5yZXN1bHR9&quot;/&gt;
+                                &lt;L7p:VariableToSet
+                                stringValue=&quot;customFieldsMetadata&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:assertionComment&gt;
+                                &lt;L7p:Properties mapValue=&quot;included&quot;&gt;
+                                &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot;// success - API key found&quot;/&gt;
+                                &lt;/L7p:entry&gt; &lt;/L7p:Properties&gt;
+                                &lt;/L7p:assertionComment&gt; &lt;/wsp:All&gt; &lt;wsp:All
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression
+                                stringValue=&quot;SW52YWxpZCBBUEkgS2V5&quot;/&gt;
+                                &lt;L7p:VariableToSet stringValue=&quot;errorMsg&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:FalseAssertion/&gt;
+                                &lt;L7p:assertionComment&gt; &lt;L7p:Properties
+                                mapValue=&quot;included&quot;&gt; &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot;// error - API key not found&quot;/&gt;
+                                &lt;/L7p:entry&gt; &lt;/L7p:Properties&gt;
+                                &lt;/L7p:assertionComment&gt; &lt;/wsp:All&gt;
+                                &lt;/wsp:OneOrMore&gt; &lt;L7p:assertionComment&gt;
+                                &lt;L7p:Properties mapValue=&quot;included&quot;&gt;
+                                &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;LEFT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot;Step 1 --&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot;Lookup API Key&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;/L7p:Properties&gt; &lt;/L7p:assertionComment&gt;
+                                &lt;/wsp:All&gt; &lt;wsp:All wsp:Usage=&quot;Required&quot;&gt;
+                                &lt;L7p:SetVariable&gt; &lt;L7p:Base64Expression
+                                stringValue=&quot;JHthcGlLZXlSZWNvcmQua2V5fQ==&quot;/&gt;
+                                &lt;L7p:VariableToSet stringValue=&quot;apiKey&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression
+                                stringValue=&quot;JHthcGlLZXlSZWNvcmQucGxhbn0=&quot;/&gt;
+                                &lt;L7p:VariableToSet stringValue=&quot;apiPlan&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression
+                                stringValue=&quot;JHthcGlLZXlSZWNvcmQuYWNjb3VudFBsYW5NYXBwaW5nSWR9&quot;/&gt;
+                                &lt;L7p:VariableToSet
+                                stringValue=&quot;accountPlanMappingId&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression stringValue=&quot;dHJ1ZQ==&quot;/&gt;
+                                &lt;L7p:VariableToSet stringValue=&quot;apiAuthz&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:assertionComment&gt;
+                                &lt;L7p:Properties mapValue=&quot;included&quot;&gt;
+                                &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;LEFT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot;Step 2 --&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot;// Capture API key and API method for
+                                metrics&quot;/&gt; &lt;/L7p:entry&gt; &lt;/L7p:Properties&gt;
+                                &lt;/L7p:assertionComment&gt; &lt;/wsp:All&gt; &lt;wsp:All
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;L7p:CommentAssertion&gt;
+                                &lt;L7p:Comment stringValue=&quot;The Account Plans Fragment must be
+                                manually added here&quot;/&gt; &lt;/L7p:CommentAssertion&gt;
+                                &lt;L7p:Include&gt; &lt;L7p:PolicyGuid
+                                stringValue=&quot;f8a5669d-831e-4417-9225-f52527f90323&quot;/&gt;
+                                &lt;/L7p:Include&gt; &lt;wsp:OneOrMore
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;L7p:ComparisonAssertion&gt;
+                                &lt;L7p:CaseSensitive booleanValue=&quot;false&quot;/&gt;
+                                &lt;L7p:Expression1 stringValue=&quot;${apiAuthz}&quot;/&gt;
+                                &lt;L7p:Operator operatorNull=&quot;null&quot;/&gt;
+                                &lt;L7p:Predicates predicates=&quot;included&quot;&gt; &lt;L7p:item
+                                dataType=&quot;included&quot;&gt; &lt;L7p:Type
+                                variableDataType=&quot;string&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;L7p:item binary=&quot;included&quot;&gt; &lt;L7p:RightValue
+                                stringValue=&quot;true&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;/L7p:Predicates&gt; &lt;/L7p:ComparisonAssertion&gt; &lt;wsp:All
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression
+                                stringValue=&quot;QWNjb3VudCBwbGFuIGxpbWl0IGV4Y2VlZGVkDQoNClJlYXNvbjogJHthcGlBdXRoekRldGFpbHN9&quot;/&gt;
+                                &lt;L7p:VariableToSet stringValue=&quot;errorMsg&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;wsp:OneOrMore
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;L7p:ComparisonAssertion&gt;
+                                &lt;L7p:CaseSensitive booleanValue=&quot;false&quot;/&gt;
+                                &lt;L7p:Expression1
+                                stringValue=&quot;${portal.analytics.response.code}&quot;/&gt;
+                                &lt;L7p:ExpressionIsVariable booleanValue=&quot;false&quot;/&gt;
+                                &lt;L7p:Operator operatorNull=&quot;null&quot;/&gt;
+                                &lt;L7p:Predicates predicates=&quot;included&quot;&gt; &lt;L7p:item
+                                dataType=&quot;included&quot;&gt; &lt;L7p:Type
+                                variableDataType=&quot;string&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;L7p:item stringLength=&quot;included&quot;&gt; &lt;L7p:Max
+                                intValue=&quot;-1&quot;/&gt; &lt;L7p:Min intValue=&quot;1&quot;/&gt;
+                                &lt;/L7p:item&gt; &lt;/L7p:Predicates&gt;
+                                &lt;/L7p:ComparisonAssertion&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression stringValue=&quot;NTAz&quot;/&gt;
+                                &lt;L7p:VariableToSet
+                                stringValue=&quot;portal.analytics.response.code&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;/wsp:OneOrMore&gt;
+                                &lt;L7p:SetVariable&gt; &lt;L7p:Base64Expression
+                                stringValue=&quot;JHthcGlLZXlSZWNvcmQuYXBwbGljYXRpb25JZH0=&quot;/&gt;
+                                &lt;L7p:VariableToSet
+                                stringValue=&quot;portal.analytics.application.uuid&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression
+                                stringValue=&quot;JHthY2NvdW50UGxhbk1hcHBpbmdJZH0=&quot;/&gt;
+                                &lt;L7p:VariableToSet
+                                stringValue=&quot;portal.analytics.organization.uuid&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:ExportVariables&gt;
+                                &lt;L7p:ExportedVars stringArrayValue=&quot;included&quot;&gt;
+                                &lt;L7p:item stringValue=&quot;portal.analytics.action&quot;/&gt;
+                                &lt;L7p:item stringValue=&quot;portal.analytics.api.uuid&quot;/&gt;
+                                &lt;L7p:item
+                                stringValue=&quot;portal.analytics.application.name&quot;/&gt;
+                                &lt;L7p:item
+                                stringValue=&quot;portal.analytics.application.uuid&quot;/&gt;
+                                &lt;L7p:item stringValue=&quot;portal.analytics.authType&quot;/&gt;
+                                &lt;L7p:item
+                                stringValue=&quot;portal.analytics.organization.name&quot;/&gt;
+                                &lt;L7p:item
+                                stringValue=&quot;portal.analytics.organization.uuid&quot;/&gt;
+                                &lt;L7p:item
+                                stringValue=&quot;portal.analytics.response.code&quot;/&gt;
+                                &lt;L7p:item
+                                stringValue=&quot;portal.analytics.routingTotalTime&quot;/&gt;
+                                &lt;/L7p:ExportedVars&gt; &lt;/L7p:ExportVariables&gt;
+                                &lt;L7p:FalseAssertion/&gt; &lt;/wsp:All&gt; &lt;/wsp:OneOrMore&gt;
+                                &lt;L7p:assertionComment&gt; &lt;L7p:Properties
+                                mapValue=&quot;included&quot;&gt; &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;LEFT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot;Step 3 --&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot;// Enforce Account Plan restriction&quot;/&gt;
+                                &lt;/L7p:entry&gt; &lt;/L7p:Properties&gt;
+                                &lt;/L7p:assertionComment&gt; &lt;/wsp:All&gt; &lt;wsp:All
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;L7p:CommentAssertion&gt;
+                                &lt;L7p:Comment stringValue=&quot;The API Plans Fragment must be
+                                manually added here&quot;/&gt; &lt;/L7p:CommentAssertion&gt;
+                                &lt;wsp:OneOrMore wsp:Usage=&quot;Required&quot;&gt;
+                                &lt;L7p:ComparisonAssertion&gt; &lt;L7p:CaseSensitive
+                                booleanValue=&quot;false&quot;/&gt; &lt;L7p:Expression1
+                                stringValue=&quot;${apiAuthz}&quot;/&gt; &lt;L7p:Operator
+                                operatorNull=&quot;null&quot;/&gt; &lt;L7p:Predicates
+                                predicates=&quot;included&quot;&gt; &lt;L7p:item
+                                dataType=&quot;included&quot;&gt; &lt;L7p:Type
+                                variableDataType=&quot;string&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;L7p:item binary=&quot;included&quot;&gt; &lt;L7p:RightValue
+                                stringValue=&quot;true&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;/L7p:Predicates&gt; &lt;/L7p:ComparisonAssertion&gt; &lt;wsp:All
+                                wsp:Usage=&quot;Required&quot;&gt;
+                                &lt;L7p:CustomizeErrorResponse&gt; &lt;L7p:Content
+                                stringValueReference=&quot;inline&quot;&gt;&lt;![CDATA[API plan
+                                limit exceeded Reason: ${apiAuthzDetails}]]&gt;&lt;/L7p:Content&gt;
+                                &lt;/L7p:CustomizeErrorResponse&gt; &lt;wsp:OneOrMore
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;L7p:ComparisonAssertion&gt;
+                                &lt;L7p:CaseSensitive booleanValue=&quot;false&quot;/&gt;
+                                &lt;L7p:Expression1
+                                stringValue=&quot;${portal.analytics.response.code}&quot;/&gt;
+                                &lt;L7p:ExpressionIsVariable booleanValue=&quot;false&quot;/&gt;
+                                &lt;L7p:Operator operatorNull=&quot;null&quot;/&gt;
+                                &lt;L7p:Predicates predicates=&quot;included&quot;&gt; &lt;L7p:item
+                                dataType=&quot;included&quot;&gt; &lt;L7p:Type
+                                variableDataType=&quot;string&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;L7p:item stringLength=&quot;included&quot;&gt; &lt;L7p:Max
+                                intValue=&quot;-1&quot;/&gt; &lt;L7p:Min intValue=&quot;1&quot;/&gt;
+                                &lt;/L7p:item&gt; &lt;/L7p:Predicates&gt;
+                                &lt;/L7p:ComparisonAssertion&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression stringValue=&quot;NTAz&quot;/&gt;
+                                &lt;L7p:VariableToSet
+                                stringValue=&quot;portal.analytics.response.code&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;/wsp:OneOrMore&gt;
+                                &lt;L7p:ExportVariables&gt; &lt;L7p:ExportedVars
+                                stringArrayValue=&quot;included&quot;&gt; &lt;L7p:item
+                                stringValue=&quot;portal.analytics.action&quot;/&gt; &lt;L7p:item
+                                stringValue=&quot;portal.analytics.api.uuid&quot;/&gt; &lt;L7p:item
+                                stringValue=&quot;portal.analytics.application.name&quot;/&gt;
+                                &lt;L7p:item
+                                stringValue=&quot;portal.analytics.application.uuid&quot;/&gt;
+                                &lt;L7p:item stringValue=&quot;portal.analytics.authType&quot;/&gt;
+                                &lt;L7p:item
+                                stringValue=&quot;portal.analytics.organization.name&quot;/&gt;
+                                &lt;L7p:item
+                                stringValue=&quot;portal.analytics.organization.uuid&quot;/&gt;
+                                &lt;L7p:item
+                                stringValue=&quot;portal.analytics.response.code&quot;/&gt;
+                                &lt;L7p:item
+                                stringValue=&quot;portal.analytics.routingTotalTime&quot;/&gt;
+                                &lt;/L7p:ExportedVars&gt; &lt;/L7p:ExportVariables&gt;
+                                &lt;L7p:FalseAssertion/&gt; &lt;/wsp:All&gt; &lt;/wsp:OneOrMore&gt;
+                                &lt;L7p:assertionComment&gt; &lt;L7p:Properties
+                                mapValue=&quot;included&quot;&gt; &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;LEFT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot;Step 4 --&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot;// Enforce API Plan restriction&quot;/&gt;
+                                &lt;/L7p:entry&gt; &lt;/L7p:Properties&gt;
+                                &lt;/L7p:assertionComment&gt; &lt;/wsp:All&gt;
+                                &lt;L7p:assertionComment&gt; &lt;L7p:Properties
+                                mapValue=&quot;included&quot;&gt; &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot; // This branch is normal API Key Processing
+                                common to all portal templates&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;/L7p:Properties&gt; &lt;/L7p:assertionComment&gt;
+                                &lt;/wsp:All&gt; &lt;L7p:CommentAssertion&gt; &lt;L7p:Comment
+                                stringValue=&quot;===========================&quot;/&gt;
+                                &lt;/L7p:CommentAssertion&gt; &lt;L7p:CommentAssertion&gt;
+                                &lt;L7p:Comment stringValue=&quot;= The rest of the service policy
+                                follows ... =&quot;/&gt; &lt;/L7p:CommentAssertion&gt;
+                                &lt;L7p:CommentAssertion&gt; &lt;L7p:Comment
+                                stringValue=&quot;===========================&quot;/&gt;
+                                &lt;/L7p:CommentAssertion&gt; &lt;wsp:OneOrMore
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;L7p:ComparisonAssertion&gt;
+                                &lt;L7p:CaseSensitive booleanValue=&quot;false&quot;/&gt;
+                                &lt;L7p:Expression1
+                                stringValue=&quot;${override_template_routing}&quot;/&gt;
+                                &lt;L7p:Expression2 stringValue=&quot;true&quot;/&gt;
+                                &lt;L7p:Predicates predicates=&quot;included&quot;&gt; &lt;L7p:item
+                                binary=&quot;included&quot;&gt; &lt;L7p:CaseSensitive
+                                booleanValue=&quot;false&quot;/&gt; &lt;L7p:RightValue
+                                stringValue=&quot;true&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;/L7p:Predicates&gt; &lt;/L7p:ComparisonAssertion&gt; &lt;wsp:All
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression
+                                stringValue=&quot;JHtyZXF1ZXN0Lmh0dHAudXJpfQ==&quot;/&gt;
+                                &lt;L7p:VariableToSet stringValue=&quot;param.uri&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:Regex&gt; &lt;L7p:AssertionComment
+                                assertionComment=&quot;included&quot;&gt; &lt;L7p:Properties
+                                mapValue=&quot;included&quot;&gt; &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot; // Regex to remove Gateway specific
+                                URL&quot;/&gt; &lt;/L7p:entry&gt; &lt;/L7p:Properties&gt;
+                                &lt;/L7p:AssertionComment&gt; &lt;L7p:AutoTarget
+                                booleanValue=&quot;false&quot;/&gt;
+                                &lt;L7p:OtherTargetMessageVariable
+                                stringValue=&quot;param.uri&quot;/&gt;
+                                &lt;L7p:PatternContainsVariables booleanValue=&quot;true&quot;/&gt;
+                                &lt;L7p:Regex stringValue=&quot;/${serviceUrl}&quot;/&gt;
+                                &lt;L7p:RegexName stringValue=&quot;process uri&quot;/&gt;
+                                &lt;L7p:Replace booleanValue=&quot;true&quot;/&gt;
+                                &lt;L7p:Replacement stringValue=&quot;&quot;/&gt; &lt;L7p:Target
+                                target=&quot;OTHER&quot;/&gt; &lt;/L7p:Regex&gt;
+                                &lt;L7p:SetVariable&gt; &lt;L7p:Base64Expression
+                                stringValue=&quot;ew0KICAgICJ1c2VySWRlbnRpZmllciI6ICIiLA0KICAgICJyb2xlcyI6IFsNCiAgICAgICAgIiR7TEFDUm9sZX0iDQogICAgXQ0KfQ==&quot;/&gt;
+                                &lt;L7p:VariableToSet
+                                stringValue=&quot;x_ca_gateway_lac_header&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression
+                                stringValue=&quot;aG9zdD0iJHtyZXF1ZXN0Lmh0dHAuaGVhZGVyLmhvc3R9IjsgcHJvdG89JHtpbmJvdW5kLmh0dHAucHJvdG99OyBjYS1sYWMtYmFzZXBhdGg9Ii8ke3NlcnZpY2VVcmx9Ig==&quot;/&gt;
+                                &lt;L7p:VariableToSet
+                                stringValue=&quot;forwardedHeaderValues&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:EncodeDecode&gt;
+                                &lt;L7p:SourceVariableName
+                                stringValue=&quot;x_ca_gateway_lac_header&quot;/&gt;
+                                &lt;L7p:TargetDataType variableDataType=&quot;string&quot;/&gt;
+                                &lt;L7p:TargetVariableName
+                                stringValue=&quot;x_ca_gateway_lac_header_b64&quot;/&gt;
+                                &lt;L7p:TransformType transformType=&quot;BASE64_ENCODE&quot;/&gt;
+                                &lt;/L7p:EncodeDecode&gt; &lt;L7p:AddHeader&gt; &lt;L7p:HeaderName
+                                stringValue=&quot;X-CA-Gateway-LAC&quot;/&gt; &lt;L7p:HeaderValue
+                                stringValue=&quot;${x_ca_gateway_lac_header_b64}&quot;/&gt;
+                                &lt;L7p:RemoveExisting booleanValue=&quot;true&quot;/&gt;
+                                &lt;/L7p:AddHeader&gt; &lt;L7p:AddHeader&gt; &lt;L7p:HeaderName
+                                stringValue=&quot;Forwarded&quot;/&gt; &lt;L7p:HeaderValue
+                                stringValue=&quot;${forwardedHeaderValues}&quot;/&gt;
+                                &lt;L7p:RemoveExisting booleanValue=&quot;true&quot;/&gt;
+                                &lt;/L7p:AddHeader&gt; &lt;wsp:OneOrMore
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;wsp:All
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;L7p:HttpRoutingAssertion&gt;
+                                &lt;L7p:FailOnErrorStatus booleanValue=&quot;false&quot;/&gt;
+                                &lt;L7p:ProtectedServiceUrl
+                                stringValue=&quot;${apiLocation}${param.uri}${request.url.query}&quot;/&gt;
+                                &lt;L7p:ProxyPassword stringValueNull=&quot;null&quot;/&gt;
+                                &lt;L7p:ProxyUsername stringValueNull=&quot;null&quot;/&gt;
+                                &lt;L7p:RequestHeaderRules
+                                httpPassthroughRuleSet=&quot;included&quot;&gt; &lt;L7p:ForwardAll
+                                booleanValue=&quot;true&quot;/&gt; &lt;L7p:Rules
+                                httpPassthroughRules=&quot;included&quot;&gt; &lt;L7p:item
+                                httpPassthroughRule=&quot;included&quot;&gt; &lt;L7p:Name
+                                stringValue=&quot;Cookie&quot;/&gt; &lt;/L7p:item&gt; &lt;L7p:item
+                                httpPassthroughRule=&quot;included&quot;&gt; &lt;L7p:Name
+                                stringValue=&quot;SOAPAction&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;/L7p:Rules&gt; &lt;/L7p:RequestHeaderRules&gt;
+                                &lt;L7p:RequestParamRules
+                                httpPassthroughRuleSet=&quot;included&quot;&gt; &lt;L7p:ForwardAll
+                                booleanValue=&quot;true&quot;/&gt; &lt;L7p:Rules
+                                httpPassthroughRules=&quot;included&quot;/&gt;
+                                &lt;/L7p:RequestParamRules&gt; &lt;L7p:ResponseHeaderRules
+                                httpPassthroughRuleSet=&quot;included&quot;&gt; &lt;L7p:Rules
+                                httpPassthroughRules=&quot;included&quot;&gt; &lt;L7p:item
+                                httpPassthroughRule=&quot;included&quot;&gt; &lt;L7p:Name
+                                stringValue=&quot;Set-Cookie&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;/L7p:Rules&gt; &lt;/L7p:ResponseHeaderRules&gt;
+                                &lt;L7p:SamlAssertionVersion intValue=&quot;2&quot;/&gt;
+                                &lt;/L7p:HttpRoutingAssertion&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression
+                                stringValue=&quot;JHtyZXNwb25zZS5odHRwLnN0YXR1c30=&quot;/&gt;
+                                &lt;L7p:VariableToSet
+                                stringValue=&quot;portal.analytics.response.code&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:assertionComment&gt;
+                                &lt;L7p:Properties mapValue=&quot;included&quot;&gt;
+                                &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot; // Call the API in LAC&quot;/&gt;
+                                &lt;/L7p:entry&gt; &lt;/L7p:Properties&gt;
+                                &lt;/L7p:assertionComment&gt; &lt;/wsp:All&gt; &lt;wsp:All
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression
+                                stringValue=&quot;JHtyZXNwb25zZS5odHRwLnN0YXR1c30=&quot;/&gt;
+                                &lt;L7p:VariableToSet
+                                stringValue=&quot;portal.analytics.response.code&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression
+                                stringValue=&quot;VW5hYmxlIHRvIHJvdXRlIHRvIEFQSS4=&quot;/&gt;
+                                &lt;L7p:VariableToSet stringValue=&quot;errorMsg&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression stringValue=&quot;NDAw&quot;/&gt;
+                                &lt;L7p:VariableToSet
+                                stringValue=&quot;httpReturnErrorCode&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;wsp:OneOrMore
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;L7p:ComparisonAssertion&gt;
+                                &lt;L7p:CaseSensitive booleanValue=&quot;false&quot;/&gt;
+                                &lt;L7p:Expression1
+                                stringValue=&quot;${portal.analytics.response.code}&quot;/&gt;
+                                &lt;L7p:ExpressionIsVariable booleanValue=&quot;false&quot;/&gt;
+                                &lt;L7p:Operator operatorNull=&quot;null&quot;/&gt;
+                                &lt;L7p:Predicates predicates=&quot;included&quot;&gt; &lt;L7p:item
+                                dataType=&quot;included&quot;&gt; &lt;L7p:Type
+                                variableDataType=&quot;string&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;L7p:item stringLength=&quot;included&quot;&gt; &lt;L7p:Max
+                                intValue=&quot;-1&quot;/&gt; &lt;L7p:Min intValue=&quot;1&quot;/&gt;
+                                &lt;/L7p:item&gt; &lt;/L7p:Predicates&gt;
+                                &lt;/L7p:ComparisonAssertion&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression stringValue=&quot;NDA4&quot;/&gt;
+                                &lt;L7p:VariableToSet
+                                stringValue=&quot;portal.analytics.response.code&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;/wsp:OneOrMore&gt;
+                                &lt;L7p:ExportVariables&gt; &lt;L7p:ExportedVars
+                                stringArrayValue=&quot;included&quot;&gt; &lt;L7p:item
+                                stringValue=&quot;portal.analytics.action&quot;/&gt; &lt;L7p:item
+                                stringValue=&quot;portal.analytics.api.uuid&quot;/&gt; &lt;L7p:item
+                                stringValue=&quot;portal.analytics.application.name&quot;/&gt;
+                                &lt;L7p:item
+                                stringValue=&quot;portal.analytics.application.uuid&quot;/&gt;
+                                &lt;L7p:item stringValue=&quot;portal.analytics.authType&quot;/&gt;
+                                &lt;L7p:item
+                                stringValue=&quot;portal.analytics.organization.name&quot;/&gt;
+                                &lt;L7p:item
+                                stringValue=&quot;portal.analytics.organization.uuid&quot;/&gt;
+                                &lt;L7p:item
+                                stringValue=&quot;portal.analytics.response.code&quot;/&gt;
+                                &lt;L7p:item
+                                stringValue=&quot;portal.analytics.routingTotalTime&quot;/&gt;
+                                &lt;/L7p:ExportedVars&gt; &lt;/L7p:ExportVariables&gt;
+                                &lt;L7p:FalseAssertion/&gt; &lt;/wsp:All&gt; &lt;/wsp:OneOrMore&gt;
+                                &lt;L7p:SetVariable&gt; &lt;L7p:Base64Expression
+                                stringValue=&quot;JHtodHRwUm91dGluZy5sYXRlbmN5fQ==&quot;/&gt;
+                                &lt;L7p:VariableToSet stringValue=&quot;routingLatency&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression
+                                stringValue=&quot;JHtyZXF1ZXN0LnJvdXRpbmdUb3RhbFRpbWV9&quot;/&gt;
+                                &lt;L7p:VariableToSet
+                                stringValue=&quot;portal.analytics.routingTotalTime&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:assertionComment&gt;
+                                &lt;L7p:Properties mapValue=&quot;included&quot;&gt;
+                                &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot;//Handle Routing&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;/L7p:Properties&gt; &lt;/L7p:assertionComment&gt;
+                                &lt;/wsp:All&gt; &lt;L7p:assertionComment&gt; &lt;L7p:Properties
+                                mapValue=&quot;included&quot;&gt; &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot; // And finally, if no errors, actually route the
+                                API request&quot;/&gt; &lt;/L7p:entry&gt; &lt;/L7p:Properties&gt;
+                                &lt;/L7p:assertionComment&gt; &lt;/wsp:OneOrMore&gt;
+                                &lt;L7p:assertionComment&gt; &lt;L7p:Properties
+                                mapValue=&quot;included&quot;&gt; &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot; // This branch processes the actual API resource
+                                request if no errors so far in policy&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;/L7p:Properties&gt; &lt;/L7p:assertionComment&gt;
+                                &lt;/wsp:All&gt; &lt;wsp:All wsp:Usage=&quot;Required&quot;&gt;
+                                &lt;L7p:CustomizeErrorResponse&gt; &lt;L7p:Content
+                                stringValue=&quot;${errorMsg}&quot;/&gt; &lt;L7p:ExtraHeaders
+                                nameValuePairArray=&quot;included&quot;/&gt; &lt;L7p:HttpStatus
+                                stringValue=&quot;${httpReturnErrorCode}&quot;/&gt;
+                                &lt;/L7p:CustomizeErrorResponse&gt; &lt;wsp:OneOrMore
+                                wsp:Usage=&quot;Required&quot;&gt; &lt;L7p:ComparisonAssertion&gt;
+                                &lt;L7p:CaseSensitive booleanValue=&quot;false&quot;/&gt;
+                                &lt;L7p:Expression1
+                                stringValue=&quot;${portal.analytics.response.code}&quot;/&gt;
+                                &lt;L7p:ExpressionIsVariable booleanValue=&quot;false&quot;/&gt;
+                                &lt;L7p:Operator operatorNull=&quot;null&quot;/&gt;
+                                &lt;L7p:Predicates predicates=&quot;included&quot;&gt; &lt;L7p:item
+                                dataType=&quot;included&quot;&gt; &lt;L7p:Type
+                                variableDataType=&quot;string&quot;/&gt; &lt;/L7p:item&gt;
+                                &lt;L7p:item stringLength=&quot;included&quot;&gt; &lt;L7p:Max
+                                intValue=&quot;-1&quot;/&gt; &lt;L7p:Min intValue=&quot;1&quot;/&gt;
+                                &lt;/L7p:item&gt; &lt;/L7p:Predicates&gt;
+                                &lt;/L7p:ComparisonAssertion&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression stringValue=&quot;NDAw&quot;/&gt;
+                                &lt;L7p:VariableToSet
+                                stringValue=&quot;portal.analytics.response.code&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;/wsp:OneOrMore&gt;
+                                &lt;L7p:ExportVariables&gt; &lt;L7p:ExportedVars
+                                stringArrayValue=&quot;included&quot;&gt; &lt;L7p:item
+                                stringValue=&quot;portal.analytics.action&quot;/&gt; &lt;L7p:item
+                                stringValue=&quot;portal.analytics.api.uuid&quot;/&gt; &lt;L7p:item
+                                stringValue=&quot;portal.analytics.application.name&quot;/&gt;
+                                &lt;L7p:item
+                                stringValue=&quot;portal.analytics.application.uuid&quot;/&gt;
+                                &lt;L7p:item stringValue=&quot;portal.analytics.authType&quot;/&gt;
+                                &lt;L7p:item
+                                stringValue=&quot;portal.analytics.organization.name&quot;/&gt;
+                                &lt;L7p:item
+                                stringValue=&quot;portal.analytics.organization.uuid&quot;/&gt;
+                                &lt;L7p:item
+                                stringValue=&quot;portal.analytics.response.code&quot;/&gt;
+                                &lt;L7p:item
+                                stringValue=&quot;portal.analytics.routingTotalTime&quot;/&gt;
+                                &lt;/L7p:ExportedVars&gt; &lt;/L7p:ExportVariables&gt;
+                                &lt;L7p:FalseAssertion/&gt; &lt;L7p:assertionComment&gt;
+                                &lt;L7p:Properties mapValue=&quot;included&quot;&gt;
+                                &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot; // This branch will handle errors if previous ALL
+                                branches falsified&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;/L7p:Properties&gt; &lt;/L7p:assertionComment&gt;
+                                &lt;/wsp:All&gt; &lt;L7p:assertionComment&gt; &lt;L7p:Properties
+                                mapValue=&quot;included&quot;&gt; &lt;L7p:entry&gt; &lt;L7p:key
+                                stringValue=&quot;RIGHT.COMMENT&quot;/&gt; &lt;L7p:value
+                                stringValue=&quot; // This branch handles the actual API request
+                                processing, only one branch fires&quot;/&gt; &lt;/L7p:entry&gt;
+                                &lt;/L7p:Properties&gt; &lt;/L7p:assertionComment&gt;
+                                &lt;/wsp:OneOrMore&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression
+                                stringValue=&quot;JHthcGlLZXlSZWNvcmQuaWR9&quot;/&gt;
+                                &lt;L7p:VariableToSet
+                                stringValue=&quot;portal.analytics.application.uuid&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression
+                                stringValue=&quot;JHthcGlLZXlSZWNvcmQubGFiZWx9&quot;/&gt;
+                                &lt;L7p:VariableToSet
+                                stringValue=&quot;portal.analytics.application.name&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression
+                                stringValue=&quot;JHthY2NvdW50UGxhbk1hcHBpbmdJZH0=&quot;/&gt;
+                                &lt;L7p:VariableToSet
+                                stringValue=&quot;portal.analytics.organization.uuid&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:SetVariable&gt;
+                                &lt;L7p:Base64Expression
+                                stringValue=&quot;JHthcGlLZXlSZWNvcmQuYWNjb3VudFBsYW5NYXBwaW5nTmFtZX0=&quot;/&gt;
+                                &lt;L7p:VariableToSet
+                                stringValue=&quot;portal.analytics.organization.name&quot;/&gt;
+                                &lt;/L7p:SetVariable&gt; &lt;L7p:ExportVariables&gt;
+                                &lt;L7p:ExportedVars stringArrayValue=&quot;included&quot;&gt;
+                                &lt;L7p:item stringValue=&quot;portal.analytics.action&quot;/&gt;
+                                &lt;L7p:item stringValue=&quot;portal.analytics.api.uuid&quot;/&gt;
+                                &lt;L7p:item
+                                stringValue=&quot;portal.analytics.application.name&quot;/&gt;
+                                &lt;L7p:item
+                                stringValue=&quot;portal.analytics.application.uuid&quot;/&gt;
+                                &lt;L7p:item stringValue=&quot;portal.analytics.authType&quot;/&gt;
+                                &lt;L7p:item
+                                stringValue=&quot;portal.analytics.organization.name&quot;/&gt;
+                                &lt;L7p:item
+                                stringValue=&quot;portal.analytics.organization.uuid&quot;/&gt;
+                                &lt;L7p:item
+                                stringValue=&quot;portal.analytics.response.code&quot;/&gt;
+                                &lt;L7p:item
+                                stringValue=&quot;portal.analytics.routingTotalTime&quot;/&gt;
+                                &lt;/L7p:ExportedVars&gt; &lt;/L7p:ExportVariables&gt;
+                                &lt;/wsp:All&gt; &lt;/wsp:Policy&gt; </l7:Resource>
+                        </l7:ResourceSet>
+                    </l7:Resources>
+                </l7:Policy>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>LAC Service Integration Template Enforcing OAuth 2.0</l7:Name>
+            <l7:Id>10b70f2299ec97f8caebbf51bac09464</l7:Id>
+            <l7:Type>ENCAPSULATED_ASSERTION</l7:Type>
+            <l7:TimeStamp>2017-06-08T01:38:44.427-04:00</l7:TimeStamp>
+            <l7:Resource>
+                <l7:EncapsulatedAssertion id="10b70f2299ec97f8caebbf51bac09464" version="4">
+                    <l7:Name>LAC Service Integration Template Enforcing OAuth 2.0</l7:Name>
+                    <l7:Guid>59a19c87-e90b-4a95-9669-7ec4a9adaad6</l7:Guid>
+                    <l7:PolicyReference id="cd44880365987da0017daf4266d003b9"
+                        resourceUri="http://ns.l7tech.com/2010/04/gateway-management/policies"/>
+                    <l7:EncapsulatedArguments>
+                        <l7:EncapsulatedAssertionArgument>
+                            <l7:Ordinal>1</l7:Ordinal>
+                            <l7:ArgumentName>apiLocation</l7:ArgumentName>
+                            <l7:ArgumentType>string</l7:ArgumentType>
+                            <l7:GuiLabel>Location of API (application calls are forwarded here)
+                                *</l7:GuiLabel>
+                            <l7:GuiPrompt>false</l7:GuiPrompt>
+                        </l7:EncapsulatedAssertionArgument>
+                        <l7:EncapsulatedAssertionArgument>
+                            <l7:Ordinal>2</l7:Ordinal>
+                            <l7:ArgumentName>override_template_routing</l7:ArgumentName>
+                            <l7:ArgumentType>string</l7:ArgumentType>
+                            <l7:GuiLabel/>
+                            <l7:GuiPrompt>false</l7:GuiPrompt>
+                        </l7:EncapsulatedAssertionArgument>
+                        <l7:EncapsulatedAssertionArgument>
+                            <l7:Ordinal>3</l7:Ordinal>
+                            <l7:ArgumentName>sslEnabled</l7:ArgumentName>
+                            <l7:ArgumentType>boolean</l7:ArgumentType>
+                            <l7:GuiLabel>Only Allow Inbound SSL to Gateway?</l7:GuiLabel>
+                            <l7:GuiPrompt>true</l7:GuiPrompt>
+                        </l7:EncapsulatedAssertionArgument>
+                        <l7:EncapsulatedAssertionArgument>
+                            <l7:Ordinal>4</l7:Ordinal>
+                            <l7:ArgumentName>serviceUrl</l7:ArgumentName>
+                            <l7:ArgumentType>string</l7:ArgumentType>
+                            <l7:GuiPrompt>false</l7:GuiPrompt>
+                        </l7:EncapsulatedAssertionArgument>
+                        <l7:EncapsulatedAssertionArgument>
+                            <l7:Ordinal>5</l7:Ordinal>
+                            <l7:ArgumentName>portal.managed.service.apiId</l7:ArgumentName>
+                            <l7:ArgumentType>string</l7:ArgumentType>
+                            <l7:GuiPrompt>false</l7:GuiPrompt>
+                        </l7:EncapsulatedAssertionArgument>
+                        <l7:EncapsulatedAssertionArgument>
+                            <l7:Ordinal>6</l7:Ordinal>
+                            <l7:ArgumentName>apiKeyRecord.applicationId</l7:ArgumentName>
+                            <l7:ArgumentType>string</l7:ArgumentType>
+                            <l7:GuiPrompt>false</l7:GuiPrompt>
+                        </l7:EncapsulatedAssertionArgument>
+                        <l7:EncapsulatedAssertionArgument>
+                            <l7:Ordinal>7</l7:Ordinal>
+                            <l7:ArgumentName>portal.analytics.application.name</l7:ArgumentName>
+                            <l7:ArgumentType>string</l7:ArgumentType>
+                            <l7:GuiPrompt>false</l7:GuiPrompt>
+                        </l7:EncapsulatedAssertionArgument>
+                        <l7:EncapsulatedAssertionArgument>
+                            <l7:Ordinal>8</l7:Ordinal>
+                            <l7:ArgumentName>portal.analytics.response.code</l7:ArgumentName>
+                            <l7:ArgumentType>string</l7:ArgumentType>
+                            <l7:GuiPrompt>false</l7:GuiPrompt>
+                        </l7:EncapsulatedAssertionArgument>
+                        <l7:EncapsulatedAssertionArgument>
+                            <l7:Ordinal>9</l7:Ordinal>
+                            <l7:ArgumentName>noAuthSwagger</l7:ArgumentName>
+                            <l7:ArgumentType>boolean</l7:ArgumentType>
+                            <l7:GuiLabel>Allow Swagger without authentication?</l7:GuiLabel>
+                            <l7:GuiPrompt>true</l7:GuiPrompt>
+                        </l7:EncapsulatedAssertionArgument>
+                        <l7:EncapsulatedAssertionArgument>
+                            <l7:Ordinal>10</l7:Ordinal>
+                            <l7:ArgumentName>swaggercacheTTL</l7:ArgumentName>
+                            <l7:ArgumentType>int</l7:ArgumentType>
+                            <l7:GuiLabel>TTL of swagger doc cached from LAC</l7:GuiLabel>
+                            <l7:GuiPrompt>true</l7:GuiPrompt>
+                        </l7:EncapsulatedAssertionArgument>
+                        <l7:EncapsulatedAssertionArgument>
+                            <l7:Ordinal>11</l7:Ordinal>
+                            <l7:ArgumentName>LACRole</l7:ArgumentName>
+                            <l7:ArgumentType>string</l7:ArgumentType>
+                            <l7:GuiLabel>Enter LAC Security Role to send for API
+                                invocation</l7:GuiLabel>
+                            <l7:GuiPrompt>true</l7:GuiPrompt>
+                        </l7:EncapsulatedAssertionArgument>
+                        <l7:EncapsulatedAssertionArgument>
+                            <l7:Ordinal>12</l7:Ordinal>
+                            <l7:ArgumentName>swaggerDoc</l7:ArgumentName>
+                            <l7:ArgumentType>string</l7:ArgumentType>
+                            <l7:GuiPrompt>false</l7:GuiPrompt>
+                        </l7:EncapsulatedAssertionArgument>
+                    </l7:EncapsulatedArguments>
+                    <l7:EncapsulatedResults>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>access_token</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>apiAuthzDetails</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>apiKey</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>apiKeyRecord.oauthCallbackUrl</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>apiKeyRecord.oauthScope</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>apiKeyRecord.oauthType</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>apiKeyRecord.platform</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>apiKeyRecord.secret</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>apiKeyRecord.version</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>apiPlan</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>apiResource</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>content-type</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>counter.id</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>counter.max</l7:ResultName>
+                            <l7:ResultType>int</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>counter.period</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>counter.user</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>counter.value</l7:ResultName>
+                            <l7:ResultType>int</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>customFieldsMetadata</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>customFieldsMetadata.count</l7:ResultName>
+                            <l7:ResultType>int</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>customFieldsMetadata.element</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>customFieldsMetadata.elements</l7:ResultName>
+                            <l7:ResultType>xml</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>customFieldsMetadata.found</l7:ResultName>
+                            <l7:ResultType>boolean</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>customFieldsMetadata.results</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>error.code</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>error.msg</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>errorMsg</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>httpRouting.reasonCode</l7:ResultName>
+                            <l7:ResultType>int</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>httpRouting.url</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>matchIndex</l7:ResultName>
+                            <l7:ResultType>int</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>routingLatency</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>session.custom</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>session.expires_at</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>session.scope</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>session.subscriber_id</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>status</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>sw.apiUri</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>sw.baseUri</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                        <l7:EncapsulatedAssertionResult>
+                            <l7:ResultName>sw.host</l7:ResultName>
+                            <l7:ResultType>string</l7:ResultType>
+                        </l7:EncapsulatedAssertionResult>
+                    </l7:EncapsulatedResults>
+                    <l7:Properties>
+                        <l7:Property key="allowTracing">
+                            <l7:StringValue>false</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="artifactVersion">
+                            <l7:StringValue>aac9d74107e2011a39724c79be3502cbec3f4363</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="description">
+                            <l7:StringValue>Use this encap assertion for LAC services. This policy
+                                template applies an OAuth 2 check to all API access calls, and is
+                                appropriate for both two- and three-legged OAuth implementations.
+                                After checking API key for access and SLA rate limit, the policy
+                                then adds appropriate headers to Route Statement to call LAC API.
+                                The following grant types are supported: Implicit, Client
+                                Credentials, Resource Owner Password Credentials, and Authorization
+                                Code.</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="paletteFolder">
+                            <l7:StringValue>internalAssertions</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="paletteIconResourceName">
+                            <l7:StringValue>polback16.gif</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="passMetricsToParent">
+                            <l7:StringValue>false</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="policyGuid">
+                            <l7:StringValue>ad857339-fd43-43bd-9917-444e33f6fce8</l7:StringValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:EncapsulatedAssertion>
+            </l7:Resource>
+        </l7:Item>
+    </l7:References>
+    <l7:Mappings>
+        <l7:Mapping action="NewOrExisting" srcId="cd44880365987da0017daf4266d003b9"
+            srcUri="https://tenant1gw.dev.ca.com:8443/restman/1.0/policies/cd44880365987da0017daf4266d003b9"
+            type="POLICY"/>
+        <l7:Mapping action="NewOrExisting" srcId="10b70f2299ec97f8caebbf51bac09464"
+            srcUri="https://tenant1gw.dev.ca.com:8443/restman/1.0/encapsulatedAssertions/10b70f2299ec97f8caebbf51bac09464"
+            type="ENCAPSULATED_ASSERTION"/>
+    </l7:Mappings>
+</l7:Bundle>
