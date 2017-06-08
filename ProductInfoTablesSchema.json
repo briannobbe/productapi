@@ -53,14 +53,14 @@
                 "autonum": true
             },
             {
-                "name": "BarcodeTagData",
-                "generic_type": "string"
-            },
-            {
                 "name": "FK_ProductDetail_ProductId",
                 "generic_type": "int",
                 "nullable": false,
                 "autonum": false
+            },
+            {
+                "name": "BarcodeTagData",
+                "generic_type": "string"
             },
             {
                 "name": "UnitsInStock",

@@ -10,7 +10,7 @@
         "ProductSku": "54321",
         "ProductName": "Saw",
         "UnitPrice": 12.34,
-        "MaxUnitsInStock": 250,
+        "MaxUnitsInStock": 240,
         "AllowBackOrder": false
     },
     {
@@ -30,7 +30,7 @@
     {
         "ProductSku": "67589",
         "ProductName": "Screwdriver",
-        "UnitPrice": 6.6,
+        "UnitPrice": 6.5,
         "MaxUnitsInStock": 1000,
         "AllowBackOrder": false
     }

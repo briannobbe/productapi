@@ -30,7 +30,7 @@
         "UnitsInStock": 5
     },
     {
-        "BarcodeTagData": "28572365",
+        "BarcodeTagData": "28542365",
         "FK_ProductDetail_ProductId": 1,
         "UnitsInStock": 5
     },

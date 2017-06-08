@@ -362,7 +362,7 @@
         "url": "jdbc:derby:directory:ManagedData;create=true",
         "catalog_name": null,
         "schema_name": "product21",
-        "user_name": "product20",
+        "user_name": "product21",
         "password": null,
         "salt": null,
         "active": true,
