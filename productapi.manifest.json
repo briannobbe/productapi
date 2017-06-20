@@ -1,6 +1,6 @@
 {
     "Name": "The Product API - v1",
-    "APIUuid":"ddd1fab4-07f7-4166-9e31-da8ec289ba85"
+    "APIUuid":"ddd1fab4-07f7-4166-9e31-da8ec289ba85",
     "Description": "Use this API for Listing Available Products to Order",
     "Version": "1",
     "ApiEulaName": "Standard EULA",
